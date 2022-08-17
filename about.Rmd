@@ -11,7 +11,12 @@ links:
 output:
   postcards::jolla
 ---
- 
-Se vienen `r emo::ji("twilight")`  cositas `r emo::ji("twilight")`
 
-Para hacer los emojis usé `devtools::install_github("hadley/emo")`
+ 
+Docente del Instituto de Ciencia Política UC
+Jefa de Proyectos en la Dirección de Estudios Sociales UC
+Magíster en Cine Documental de la Universidad de Chile
+Diploma en Estudios de Género de la Universidad de Chile
+R-Ladies
+
+Intereses: Metodologías de la investigación, R, política local, partidos políticos.

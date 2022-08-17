@@ -1,5 +1,5 @@
 ---
-title: "Blank Space"
+title: "Índice de contenido"
 site: distill::distill_website
 listing: posts
 ---

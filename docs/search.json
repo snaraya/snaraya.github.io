@@ -4,23 +4,22 @@
       "path": "about.html",
       "title": "Soledad Araya",
       "author": [],
-      "contents": "\n\n          \n          \n          Blank Space\n          \n          \n          Home\n          About\n          CV\n          ☰\n          \n          \n      \n        \n          \n            Soledad Araya\n          \n          \n            \n              Se vienen ❇️ cositas ❇️\n            \n            \n              Se vienen ❇️ cositas ❇️\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2022-08-16T23:29:33-04:00"
+      "contents": "\n\n          \n          \n          Blank Space\n          \n          \n          Home\n          About\n          CV\n          ☰\n          \n          \n      \n        \n          \n            Soledad Araya\n          \n          \n            \n              Se vienen cositas\n            \n            \n              Se vienen cositas\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2022-08-17T17:06:47-04:00"
     },
     {
       "path": "cv.html",
-      "title": "CV",
-      "description": "Información sobre trabajo",
+      "title": "Curriculum",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-08-16T23:29:35-04:00"
+      "last_modified": "2022-08-17T17:06:48-04:00"
     },
     {
       "path": "index.html",
-      "title": "Blank Space",
+      "title": "Índice de contenido",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-08-16T23:29:36-04:00"
+      "last_modified": "2022-08-17T17:12:08-04:00"
     }
   ],
   "collections": ["posts/posts.json"]

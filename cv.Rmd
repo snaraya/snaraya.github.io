@@ -1,6 +1,6 @@
 ---
-title: "CV"
+title: "Curriculum"
 description: |
-  Información sobre trabajo
 ---
 
+Próximamente.
