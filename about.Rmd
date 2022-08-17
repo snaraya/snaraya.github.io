@@ -12,7 +12,6 @@ output:
   postcards::jolla
 ---
 
- 
 Docente del Instituto de Ciencia Política UC
 Jefa de Proyectos en la Dirección de Estudios Sociales UC
 Magíster en Cine Documental de la Universidad de Chile
