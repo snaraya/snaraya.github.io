@@ -12,10 +12,10 @@ output:
   postcards::jolla
 ---
 
-Docente del Instituto de Ciencia Política UC
-Jefa de Proyectos en la Dirección de Estudios Sociales UC
-Magíster en Cine Documental de la Universidad de Chile
-Diploma en Estudios de Género de la Universidad de Chile
-R-Ladies
+* Docente del Instituto de Ciencia Política UC.
+* Jefa de Proyectos en la Dirección de Estudios Sociales UC
+* Magíster en Cine Documental de la Universidad de Chile
+* Diploma en Estudios de Género de la Universidad de Chile
+* **R-Ladies**
 
-Intereses: Metodologías de la investigación, R, política local, partidos políticos.
+Intereses: *Metodologías de la investigación, R, política local, partidos políticos.*

@@ -1,0 +1,3130 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Primeros pasos con tidyverse y ggplot2</title>
+
+  <meta property="description" itemprop="description" content="¿Cómo avanzar en el uso de R?"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-08-16"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-08-16"/>
+  <meta name="article:author" content="Soledad Araya"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Primeros pasos con tidyverse y ggplot2"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="¿Cómo avanzar en el uso de R?"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Primeros pasos con tidyverse y ggplot2"/>
+  <meta property="twitter:description" content="¿Cómo avanzar en el uso de R?"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Primeros pasos con tidyverse y ggplot2"]},{"type":"character","attributes":{},"value":["¿Cómo avanzar en el uso de R?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Soledad Araya"]},{"type":"character","attributes":{},"value":["https://snaraya.github.io"]}]}]},{"type":"character","attributes":{},"value":["08-16-2022"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/Estadistica por rango etario año 2016.xlsx","images/imagen1.png","images/imagen2.png","input/tablas.xlsx","primeros-pasos_files/figure-html5/unnamed-chunk-11-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-12-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-13-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-14-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-15-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-17-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-18-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-19-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-20-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-21-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-22-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-9-1.png","report.html"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="primeros-pasos_files/header-attrs-2.15/header-attrs.js"></script>
+  <script src="primeros-pasos_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="primeros-pasos_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <script src="primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="primeros-pasos_files/popper-2.6.0/popper.min.js"></script>
+  <link href="primeros-pasos_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="primeros-pasos_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="primeros-pasos_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="primeros-pasos_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="primeros-pasos_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="primeros-pasos_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="primeros-pasos_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Primeros pasos con tidyverse y ggplot2","description":"¿Cómo avanzar en el uso de R?","authors":[{"author":"Soledad Araya","authorURL":"https://snaraya.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-16T00:00:00.000-04:00","citationText":"Araya, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Primeros pasos con tidyverse y ggplot2</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>¿Cómo avanzar en el uso de R?</p></p>
+</div>
+
+<div class="d-byline">
+  Soledad Araya <a href="https://snaraya.github.io" class="uri">https://snaraya.github.io</a> 
+  
+<br/>08-16-2022
+</div>
+
+<div class="d-article">
+<h2 id="r-markdown">R Markdown</h2>
+<p>En el primer taller, lo que hicimos fue abrir un script y trabajar en él. Para escribir un comentario o título en un script, se debe anteponer un <code>#</code> en la línea de código. Trabajar en un script es fácil, pero el trabajo en ellos puede ser confuso para alguien quien no está acostumbrado al lenguaje utilizado en R. Entonces, si queremos que nuestros trabajos sean reproducibles y accesibles, tenemos que pensar en otra forma de mostrar nuestra “área de trabajo”. Por otro lado, R Markdown es utilizado también en el desarrollo de <strong>blogs</strong> o <strong>páginas estáticas</strong> en GitHub. Por ese motivo, en este curso de ahora en adelante utilizaremos este formato para avanzar en nuestro trabajo.</p>
+<p>Entonces, podemos utilizar R Markdown para:</p>
+<ul>
+<li>Guardar y ejecutar nuestras líneas de código.</li>
+<li>Generar informes de alta calidad que pueden ser compartidos con más personas.</li>
+<li>R Markdown genera distintos tipos de documentos (html, pdf, Words, dashboards, latex, etc.).</li>
+<li>No sólo funciona con el lenguaje R, sino también con otros formatos de códigos como Python.</li>
+</ul>
+<p>Si tenemos instalada la librería <code>rmarkdown</code>, crearemos un archivo que nos servirá para avanzar en el taller de hoy:</p>
+<p><img src="images/imagen1.png" />
+<img src="images/imagen2.png" />
+Empezaremos cargando la librería <code>tidyverse</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Opciones que se pueden utilizar en los chunks:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Si queremos comentar un chunk, debemos tratarlo como un script y anteponer un gato</span></span>
+<span></span>
+<span><span class='co'># Aunque el desarrollo o presentación de tablas aun no está en nuestro itinerario del curso, sí podemos empezar a instalar algunas de las librerías que nos servirán más adelante:</span></span>
+<span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://yihui.org/knitr/'>knitr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://haozhu233.github.io/kableExtra/'>kableExtra</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"input/tablas.xlsx"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"striped"</span>, <span class='st'>"hover"</span>, <span class='st'>"condensed"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Opciones
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+include = FALSE
+</td>
+<td style="text-align:left;">
+Ni el código ni los resultados aparecerán en el archivo final.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+echo = FALSE
+</td>
+<td style="text-align:left;">
+El código no aparecerá en el resultado final, pero sí sus resultados.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+message = FALSE
+</td>
+<td style="text-align:left;">
+Si el código genera algún mensaje, éste no aparecerá en el archivo final.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+warning = FALSE
+</td>
+<td style="text-align:left;">
+Si el código genera algún warning, éste no aparecerá en el archivo final.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fig.cap = “…”
+</td>
+<td style="text-align:left;">
+Añade un título a los gráficos.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<h2 id="tidyverse-ggplot2"><code>tidyverse</code> &amp; <code>ggplot2</code></h2>
+<p><code>ggplot2</code> es una librería dentro del <code>tidyvere</code> que nos permitirá hacer gráficos personalizables. Está basada en <strong>The Grammar of Graphics</strong> que propone un trabajo gramatical que puede ser usado para describir y construir una variedad amplia de gráficos estadísticos (para más información: ver <em>A Layered Grammar of Graphics</em> de Hadley Wickham (2010) y <em>The Grammar of Graphics</em> de Wilkinson, Anand y Grossman (2005)). Para que nos hagamos una idea: hacer gráficos requiere de que nosotros/as podamos ir separando cada pieza que lo compone: desde los tipos de variables que estamos utilizando hasta el tipo de letra que debe tener nuestro título. De esa manera, <code>ggplot2</code> se combierte en una herramienta valiosa para la presentación de resultados.</p>
+<p>Las herramientas del <code>tidyverse</code> como lo son <code>filter()</code>, <code>mutate()</code>, <code>summarise()</code> y <code>arrange()</code> son útiles para transformar los datos que necesitaremos graficar. En algunos casos, esta será mínima, en otras tendremos que trabajar para llegar a una base de datos lista para graficar. Algo muy importante es saber diferenciar las bases de datos que son “anchas” de las que son “largas”, porque dependiendo de su caracterización es cómo tendremos que jugar con ellas. Para ese tipo de transformaciones utilizamos <code>pivot_longer()</code> y <code>pivot_wider()</code>.</p>
+<p>Cargaremos algunas bases de datos que están en la carpeta data:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"data/Estadistica por rango etario año 2016.xlsx"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code> [1] &quot;ESTADISTICA POR RANGO ETARIO AL 31/12/2016&quot;
+ [2] &quot;...2&quot;                                      
+ [3] &quot;...3&quot;                                      
+ [4] &quot;...4&quot;                                      
+ [5] &quot;...5&quot;                                      
+ [6] &quot;...6&quot;                                      
+ [7] &quot;...7&quot;                                      
+ [8] &quot;...8&quot;                                      
+ [9] &quot;...9&quot;                                      
+[10] &quot;...10&quot;                                     
+[11] &quot;...11&quot;                                     
+[12] &quot;...12&quot;                                     
+[13] &quot;...13&quot;                                     
+[14] &quot;...14&quot;                                     
+[15] &quot;...15&quot;                                     
+[16] &quot;...16&quot;                                     
+[17] &quot;...17&quot;                                     
+[18] &quot;...18&quot;                                     
+[19] &quot;...19&quot;                                     </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Si ven la base de datos normal, verán que la primera fila no contiene los nombres de las variables. Por lo tanto, tenemos que cargarla especificando esto:</span></span>
+<span></span>
+<span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"data/Estadistica por rango etario año 2016.xlsx"</span>, skip <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code> [1] &quot;PARTIDO&quot; &quot;REGION&quot;  &quot;COMUNA&quot;  &quot;SEXO&quot;    &quot;18-19&quot;   &quot;20-24&quot;  
+ [7] &quot;25-29&quot;   &quot;30-34&quot;   &quot;35-39&quot;   &quot;40-44&quot;   &quot;45-49&quot;   &quot;50-54&quot;  
+[13] &quot;55-59&quot;   &quot;60-64&quot;   &quot;65-69&quot;   &quot;70-74&quot;   &quot;75-79&quot;   &quot;80+&quot;    
+[19] &quot;TOTAL&quot;  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Si contiene los nombres de las columnas. En R existe el paquete janitor que nos ayuda a limpiar los nombres de las columnas. Los nombres con caracteres especiales siempre dan problemas.</span></span>
+<span></span>
+<span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code> [1] &quot;partido&quot; &quot;region&quot;  &quot;comuna&quot;  &quot;sexo&quot;    &quot;x18_19&quot;  &quot;x20_24&quot; 
+ [7] &quot;x25_29&quot;  &quot;x30_34&quot;  &quot;x35_39&quot;  &quot;x40_44&quot;  &quot;x45_49&quot;  &quot;x50_54&quot; 
+[13] &quot;x55_59&quot;  &quot;x60_64&quot;  &quot;x65_69&quot;  &quot;x70_74&quot;  &quot;x75_79&quot;  &quot;x80&quot;    
+[19] &quot;total&quot;  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Ahora será más fácil escribir las variables.</span></span></code></pre>
+</div>
+</div>
+<p>Ahora, tenemos una base que podemos utilizar más fácilmente para codificar.</p>
+<hr />
+<h1 id="exploración-de-la-base-de-datos">Exploración de la base de datos</h1>
+<p>Uno de los primeros pasos siempre es explorar la base de datos. Para eso, tenemos distintas funciones. La función más básica es <code>head()</code> y <code>tail()</code>que nos permite ver la información de los primeros y últimas 10 filas de la base de datos. Después, tenemos <code>str()</code> que nos muestra el formato de las variables.</p>
+<p>Pero ¿de qué hablamos cuando hablamos de los formatos de las variables?</p>
+<p>Conocer en qué formato están nuestras variables nos hace la vida más fácil, porque nos permite utilizar funciones de acuerdo a su formato, especialmente cuando utilizamos el <code>tidyverse</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"input/tablas.xlsx"</span>, sheet <span class='op'>=</span> <span class='st'>"tabla_formatos"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"striped"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span>, bold <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>2</span>, width_min <span class='op'>=</span> <span class='st'>"6cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>3</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span><span class='op'>)</span>  </span></code></pre>
+</div>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Ejemplo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Logical
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable binaria
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+TRUE, FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Numeric
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable numérica que puede ser escriba con fracciones.
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+5, 4, 100, 98.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Integer
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable numérica que no puede ser escrito en fracción. En otras palabras, números enteros.
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+2L, 46L, 0L
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Complex
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable que contiene números imaginarios.
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+3 + 2i
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Character or String
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable que contiene información en palabras escritas
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+“Soledad Araya”, “Análisis de datos”, “Programar en R”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Factors
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable usada para categorizar cuando tenemos un rango limitado de diferentes valores
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+Scala de Likert: “Muy satisfecho”,“Satisfecho”,“Neutro”,“Insatisfecho”,“Satisfecho”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Double
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Variable guardada en formado decimal
+</td>
+<td style="text-align:left;min-width: 3cm; ">
+Si cargamos una variable con números enteros “6”, se guardará como “6.00”
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La función más básica para revisar las columnas es <code>str()</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>tibble [10,930 × 19] (S3: tbl_df/tbl/data.frame)
+ $ partido: chr [1:10930] &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; ...
+ $ region : chr [1:10930] &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; ...
+ $ comuna : chr [1:10930] &quot;ALTO HOSPICIO&quot; &quot;ALTO HOSPICIO&quot; &quot;CAMIÑA&quot; &quot;CAMIÑA&quot; ...
+ $ sexo   : chr [1:10930] &quot;M&quot; &quot;V&quot; &quot;V&quot; &quot;M&quot; ...
+ $ x18_19 : num [1:10930] 0 0 0 0 0 0 0 0 0 0 ...
+ $ x20_24 : num [1:10930] 0 0 0 0 0 0 0 1 0 0 ...
+ $ x25_29 : num [1:10930] 1 1 0 1 0 0 1 2 10 6 ...
+ $ x30_34 : num [1:10930] 0 2 0 0 0 0 4 4 24 19 ...
+ $ x35_39 : num [1:10930] 1 1 1 2 1 1 2 1 25 20 ...
+ $ x40_44 : num [1:10930] 6 5 3 3 1 0 3 2 35 29 ...
+ $ x45_49 : num [1:10930] 13 14 4 2 4 1 2 4 70 55 ...
+ $ x50_54 : num [1:10930] 25 14 3 3 5 0 2 9 70 68 ...
+ $ x55_59 : num [1:10930] 20 16 7 1 2 2 4 3 58 63 ...
+ $ x60_64 : num [1:10930] 25 12 5 1 0 4 1 2 65 68 ...
+ $ x65_69 : num [1:10930] 18 8 2 2 1 0 1 1 50 62 ...
+ $ x70_74 : num [1:10930] 15 7 1 0 0 1 3 0 40 38 ...
+ $ x75_79 : num [1:10930] 4 2 3 7 0 0 0 3 27 33 ...
+ $ x80    : num [1:10930] 4 4 5 2 0 1 3 1 28 36 ...
+ $ total  : num [1:10930] 132 86 34 24 14 10 26 33 502 497 ...</code></pre>
+</div>
+<p>Pero no es la única función:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Es la misma información, pero más ordenada:</span></span>
+<span></span>
+<span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>Rows: 10,930
+Columns: 19
+$ partido &lt;chr&gt; &quot;RENOVACION NACIONAL&quot;, &quot;RENOVACION NACIONAL&quot;, &quot;RENOV…
+$ region  &lt;chr&gt; &quot;DE TARAPACA&quot;, &quot;DE TARAPACA&quot;, &quot;DE TARAPACA&quot;, &quot;DE TAR…
+$ comuna  &lt;chr&gt; &quot;ALTO HOSPICIO&quot;, &quot;ALTO HOSPICIO&quot;, &quot;CAMIÑA&quot;, &quot;CAMIÑA&quot;…
+$ sexo    &lt;chr&gt; &quot;M&quot;, &quot;V&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;M…
+$ x18_19  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 1…
+$ x20_24  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10, 11, 3,…
+$ x25_29  &lt;dbl&gt; 1, 1, 0, 1, 0, 0, 1, 2, 10, 6, 0, 0, 0, 1, 18, 14, 5…
+$ x30_34  &lt;dbl&gt; 0, 2, 0, 0, 0, 0, 4, 4, 24, 19, 1, 0, 1, 2, 13, 27, …
+$ x35_39  &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 2, 1, 25, 20, 5, 0, 3, 0, 15, 21, …
+$ x40_44  &lt;dbl&gt; 6, 5, 3, 3, 1, 0, 3, 2, 35, 29, 2, 3, 1, 2, 22, 25, …
+$ x45_49  &lt;dbl&gt; 13, 14, 4, 2, 4, 1, 2, 4, 70, 55, 3, 2, 5, 5, 51, 67…
+$ x50_54  &lt;dbl&gt; 25, 14, 3, 3, 5, 0, 2, 9, 70, 68, 3, 5, 3, 15, 72, 1…
+$ x55_59  &lt;dbl&gt; 20, 16, 7, 1, 2, 2, 4, 3, 58, 63, 8, 6, 6, 6, 75, 87…
+$ x60_64  &lt;dbl&gt; 25, 12, 5, 1, 0, 4, 1, 2, 65, 68, 8, 6, 8, 5, 65, 93…
+$ x65_69  &lt;dbl&gt; 18, 8, 2, 2, 1, 0, 1, 1, 50, 62, 1, 4, 9, 4, 64, 73,…
+$ x70_74  &lt;dbl&gt; 15, 7, 1, 0, 0, 1, 3, 0, 40, 38, 2, 5, 6, 2, 50, 41,…
+$ x75_79  &lt;dbl&gt; 4, 2, 3, 7, 0, 0, 0, 3, 27, 33, 2, 1, 0, 5, 36, 33, …
+$ x80     &lt;dbl&gt; 4, 4, 5, 2, 0, 1, 3, 1, 28, 36, 1, 2, 4, 4, 53, 21, …
+$ total   &lt;dbl&gt; 132, 86, 34, 24, 14, 10, 26, 33, 502, 497, 36, 35, 4…</code></pre>
+</div>
+<p>Luego, tenemos <code>summary()</code> que nos permite tener el mínimo, máximo y los cuartiles de las variables. Especialmente útil cuando tenemos variables numéricas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>   partido             region             comuna         
+ Length:10930       Length:10930       Length:10930      
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         
+     sexo               x18_19             x20_24       
+ Length:10930       Min.   :  0.0000   Min.   :  0.000  
+ Class :character   1st Qu.:  0.0000   1st Qu.:  0.000  
+ Mode  :character   Median :  0.0000   Median :  0.000  
+                    Mean   :  0.7866   Mean   :  4.316  
+                    3rd Qu.:  0.0000   3rd Qu.:  2.000  
+                    Max.   :569.0000   Max.   :658.000  
+     x25_29            x30_34            x35_39      
+ Min.   :  0.000   Min.   :  0.000   Min.   :  0.00  
+ 1st Qu.:  0.000   1st Qu.:  0.000   1st Qu.:  0.00  
+ Median :  1.000   Median :  1.000   Median :  1.00  
+ Mean   :  4.701   Mean   :  4.076   Mean   :  4.15  
+ 3rd Qu.:  3.000   3rd Qu.:  3.000   3rd Qu.:  4.00  
+ Max.   :344.000   Max.   :251.000   Max.   :206.00  
+     x40_44            x45_49           x50_54           x55_59      
+ Min.   :  0.000   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00  
+ 1st Qu.:  0.000   1st Qu.:  0.00   1st Qu.:  0.00   1st Qu.:  0.00  
+ Median :  1.000   Median :  2.00   Median :  2.00   Median :  2.00  
+ Mean   :  5.847   Mean   : 10.92   Mean   : 12.87   Mean   : 10.74  
+ 3rd Qu.:  5.000   3rd Qu.:  9.00   3rd Qu.: 10.00   3rd Qu.:  9.00  
+ Max.   :290.000   Max.   :494.00   Max.   :550.00   Max.   :569.00  
+     x60_64            x65_69            x70_74       
+ Min.   :  0.000   Min.   :  0.000   Min.   :  0.000  
+ 1st Qu.:  0.000   1st Qu.:  0.000   1st Qu.:  0.000  
+ Median :  2.000   Median :  1.000   Median :  1.000  
+ Mean   :  8.524   Mean   :  6.689   Mean   :  5.245  
+ 3rd Qu.:  7.000   3rd Qu.:  6.000   3rd Qu.:  4.000  
+ Max.   :417.000   Max.   :281.000   Max.   :232.000  
+     x75_79             x80              total       
+ Min.   :  0.000   Min.   :  0.000   Min.   :   1.0  
+ 1st Qu.:  0.000   1st Qu.:  0.000   1st Qu.:   4.0  
+ Median :  0.000   Median :  0.000   Median :  21.0  
+ Mean   :  3.654   Mean   :  4.595   Mean   :  87.1  
+ 3rd Qu.:  3.000   3rd Qu.:  3.000   3rd Qu.:  79.0  
+ Max.   :136.000   Max.   :224.000   Max.   :3096.0  </code></pre>
+</div>
+<p>Si necesitamos más información, tenemos <code>skim()</code>, que no sólo nos entrega información sobre las variables numéricas, sino también de las variables categóricas. Esta función viene del paquete <code>skimr</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>skimr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/skimr/reference/skim.html'>skim</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-4">Table 1: </span>Data summary
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+df_militantes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+10930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+<th style="text-align:right;">
+empty
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:right;">
+whitespace
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+partido
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+region
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comuna
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+346
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+x18_19
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.79
+</td>
+<td style="text-align:right;">
+7.87
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+569
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x20_24
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.32
+</td>
+<td style="text-align:right;">
+17.80
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+658
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x25_29
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.70
+</td>
+<td style="text-align:right;">
+15.91
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+344
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x30_34
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.08
+</td>
+<td style="text-align:right;">
+11.95
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+251
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x35_39
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.15
+</td>
+<td style="text-align:right;">
+10.08
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+206
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x40_44
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5.85
+</td>
+<td style="text-align:right;">
+13.53
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+290
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x45_49
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.92
+</td>
+<td style="text-align:right;">
+25.36
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+494
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x50_54
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12.87
+</td>
+<td style="text-align:right;">
+31.01
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+550
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x55_59
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.74
+</td>
+<td style="text-align:right;">
+24.81
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+569
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x60_64
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8.52
+</td>
+<td style="text-align:right;">
+19.55
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+417
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x65_69
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6.69
+</td>
+<td style="text-align:right;">
+15.65
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+281
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x70_74
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5.24
+</td>
+<td style="text-align:right;">
+12.71
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+232
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x75_79
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3.65
+</td>
+<td style="text-align:right;">
+9.17
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+136
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x80
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.59
+</td>
+<td style="text-align:right;">
+12.72
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+224
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+87.10
+</td>
+<td style="text-align:right;">
+182.34
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+3096
+</td>
+<td style="text-align:left;">
+▇▁▁▁▁
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Finalmente, podemos usar una función que creará un documento-reporte html con información básica de las variables como estructura, estadísticas, missings, visualizaciones sobre la distribución. Es la función <code>create_report()</code> del paquete <code>DataExplorer</code>. Se demorará unos segundos en hacer el reporte.</p>
+<p>Como podemos observar ¡incluso nos entrega información de los componentes principales!</p>
+<blockquote>
+<p>Análisis de componentes principales exploratorio: Cuando hay muchas variables, lo normal es que estén relacionadas o que midan lo mismo bajo distintos parámetros (esto es muy importante, especialmente cuando creamos preguntas o parrillas para una encuesta). Por lo tanto, se hace necesario <strong>reducir el número de variables</strong>. En este caso, cuando las variables están fuertemente correlacionadas, estas puedes ser transformadas en nuevas variables llamado <strong>conjunto de componentes principales</strong>.</p>
+</blockquote>
+<p>En este caso, las variables no tienen mucha información y están correlacionadas porque están midiendo básicamente lo mismo: el número de militantes por edad y género. Ya que tenemos nuestra descripción de los datos, volvamos al punto inicial.</p>
+<hr />
+<h1 id="wide-vs.-long-data">Wide vs. long data</h1>
+<p>La base de datos que tenemos está en formato “wide”, ¿qué quiere decir esto? Las edades, por ejemplo, están midiendo lo mismo. Para hacer un mayor análisis, necesitamos convertir nuestra base “wide” en una base “long”. Esto es conocido como transformar una base “desordenada” en una base “tidy” u ordenada. Este último tipo nos sirve especialmente cuando usamos el tidyverse</p>
+<p>¿Cómo hacemos esta tranformación?</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Usamos pivot_longer()</span></span>
+<span></span>
+<span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"x"</span><span class='op'>)</span>, names_to <span class='op'>=</span> <span class='st'>"edad"</span>, values_to <span class='op'>=</span> <span class='st'>"militantes"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 6 × 7
+  partido             region      comuna  sexo  total edad  militantes
+  &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+1 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x18_…          0
+2 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x20_…          0
+3 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x25_…          1
+4 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x30_…          0
+5 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x35_…          1
+6 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x40_…          6</code></pre>
+</div>
+<p>Ahora, revisemos la base de datos con <code>summary()</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>   partido             region             comuna         
+ Length:153020      Length:153020      Length:153020     
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         
+     sexo               total            edad          
+ Length:153020      Min.   :   1.0   Length:153020     
+ Class :character   1st Qu.:   4.0   Class :character  
+ Mode  :character   Median :  21.0   Mode  :character  
+                    Mean   :  87.1                     
+                    3rd Qu.:  79.0                     
+                    Max.   :3096.0                     
+   militantes     
+ Min.   :  0.000  
+ 1st Qu.:  0.000  
+ Median :  1.000  
+ Mean   :  6.221  
+ 3rd Qu.:  4.000  
+ Max.   :658.000  </code></pre>
+</div>
+<hr />
+<h1 id="grammar-of-graphics">Grammar of graphics</h1>
+<p>Ya exploramos nuestros datos y convertimos nuestra base de datos en una base tidy. Es momento de que hagamos nuestros gráficos. Para eso, debemos aprender cómo hacerlo en <code>ggplot2</code>. La dimensión o capa principal es denomina <code>layer</code> que es usada para crear los objetos en un gráfico. Se pueden usar una multiplicidad de capas que usan los mismos datos.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>knitr.kable.NA <span class='op'>=</span> <span class='st'>''</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"input/tablas.xlsx"</span>, sheet <span class='op'>=</span> <span class='st'>"tabla_graficos"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"striped"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span>, bold <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>3</span>, width_min <span class='op'>=</span> <span class='st'>"6cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/group_rows.html'>pack_rows</a></span><span class='op'>(</span><span class='st'>"Layer"</span>, <span class='fl'>1</span>, <span class='fl'>5</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Dimensiones
+</th>
+<th style="text-align:left;">
+Subdimension
+</th>
+<th style="text-align:left;">
+Función
+</th>
+<th style="text-align:left;">
+Ejemplo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="4" style="border-bottom: 1px solid;">
+<strong>Layer</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+Conjunto de datos
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+La fuente de información a ser visualizada. Puedem usarse distintas fuentes al construir un gráfico.
+</td>
+<td style="text-align:left;">
+ggplot(data = df_militantes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+Ejes (mapping)
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Define cómo las variables se aplican en el plot.
+</td>
+<td style="text-align:left;">
+ggplot(df_militantes, mapping = aes(x = “edad”, y = “militantes”)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+Geometría (geom)
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Controla el tipo de gráfico que estamos creando.
+</td>
+<td style="text-align:left;">
+geom_stat()
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+Trasformaciones (stat)
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Transforma los datos, generalmente “resume” la información. Típicamente se usa en los gráficos de barra.
+</td>
+<td style="text-align:left;">
+geom_bar(stat = “identity”)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+Posiciones (position)
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+A veces, necesitamos ajustar la posición de los elementos de un gráfico. Se usa usualmente en los gráficos de barra.
+</td>
+<td style="text-align:left;">
+geom_bar(stat = “identity”, position = “dodge”)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Escalas (scale)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Controla cómo los datos son representados con atributos estéticos.
+</td>
+<td style="text-align:left;">
+ggplot(df_militantes, mapping = aes(x = “edad”, y = “militantes”, color = “sexo”))
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Sistema de coordenadas (cord)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Mapea la posición del objeto (gráfico) en el plano.
+</td>
+<td style="text-align:left;">
+ggplot(…) %&gt;% coord_flip()
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 3cm; font-weight: bold;">
+Faceting (facet)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;min-width: 6cm; ">
+Puede ser usada para separar los datos en subconjunto de datos.
+</td>
+<td style="text-align:left;">
+ggplot(…) %&gt;% facet_wrap(facets = vars(sexo))
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ahora, desarrollemos un ejemplo visual:</p>
+<h2 id="primero-crearemos-el-objeto">1. Primero, crearemos el objeto:</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>df_militantes</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>militantes</span>, y <span class='op'>=</span> <span class='va'>edad</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<h2 id="agregamos-el-geom-y-definir-el-stat">2. Agregamos el <code>geom</code> y definir el <code>stat</code></h2>
+<p>Luego, tenemos que definir qué tipo de gráfico queremos. En este caso, haremos un gráfico de barras:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span><span class='op'>)</span> <span class='co'># Contará el número de filas </span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+</div>
+<p>Hay ciertas cosas que debemos cambiar, por ejemplo:</p>
+<ul>
+<li>Cambiar cómo salen representados los rangos etarios.</li>
+<li>Cambiar la nomenclatura del eje x.</li>
+</ul>
+<h2 id="escalas">3. Escalas</h2>
+<p>Controla cómo los datos son representados. En este caso, ya tenemos definido cómo están dispuesto los ejes, pero quizás queremos obtener más información. Podemos agregar la variable “sexo” y esto será representado con distintos colores.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>df_militantes</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>militantes</span>, y <span class='op'>=</span> <span class='va'>edad</span>, fill <span class='op'>=</span> <span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+</div>
+<h2 id="posición">4. Posición</h2>
+<p>Esto no es exactamente lo que queremos. Las barras apiladas no son útiles para ver el conteo de los casos.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-12-1.png" width="624" /></p>
+</div>
+<p>Podemos ver que además cambia la nomenclatura del eje x, ya que disminuimos el número de militantes por rango etario.</p>
+<h2 id="sistema-de-coordenadas">5. Sistema de coordenadas</h2>
+<p>El sistema de coordenadas no suele cambiar cuando trabajamos con este tipo de datos. Aun así, a veces lo usamos para dar “vuelta” la posición de los ejes.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_flip.html'>coord_flip</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+</div>
+<h2 id="faceting">6. Faceting</h2>
+<p>Puede que no nos guste como está visualizado el gráfico y queremos separar los hombres de las mujeres. Para eso usamos <code>facet</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span>facets <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-14-1.png" width="624" /></p>
+</div>
+<h2 id="leyendas-títulos-y-tema">7. Leyendas, títulos y tema</h2>
+<p>Como les iba diciendo, uno puede mejorar los gráficos ocupando títulos, mejorando las categorías de los datos y el tema. Este último, se refiere a todas esas cuestiones “estéticas” del gráfico.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span>facets <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+</div>
+<p>Para cambiar los rangos etarios, necesitamos cambiar la base de datos con la que estamos trabajando.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Primero, veamos qué tipo de columna es "edad":</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>tibble [153,020 × 7] (S3: tbl_df/tbl/data.frame)
+ $ partido   : chr [1:153020] &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; &quot;RENOVACION NACIONAL&quot; ...
+ $ region    : chr [1:153020] &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; &quot;DE TARAPACA&quot; ...
+ $ comuna    : chr [1:153020] &quot;ALTO HOSPICIO&quot; &quot;ALTO HOSPICIO&quot; &quot;ALTO HOSPICIO&quot; &quot;ALTO HOSPICIO&quot; ...
+ $ sexo      : chr [1:153020] &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; ...
+ $ total     : num [1:153020] 132 132 132 132 132 132 132 132 132 132 ...
+ $ edad      : chr [1:153020] &quot;x18_19&quot; &quot;x20_24&quot; &quot;x25_29&quot; &quot;x30_34&quot; ...
+ $ militantes: num [1:153020] 0 0 1 0 1 6 13 25 20 25 ...</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Con esto en consideración, hacemos la transformación. Se recomienda crear una nueva variable:</span></span>
+<span></span>
+<span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>rangos_etarios <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>edad</span>, <span class='st'>"x"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 6 × 8
+  partido    region comuna sexo  total edad  militantes rangos_etarios
+  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;         
+1 RENOVACIO… DE TA… ALTO … M       132 x18_…          0 18_19         
+2 RENOVACIO… DE TA… ALTO … M       132 x20_…          0 20_24         
+3 RENOVACIO… DE TA… ALTO … M       132 x25_…          1 25_29         
+4 RENOVACIO… DE TA… ALTO … M       132 x30_…          0 30_34         
+5 RENOVACIO… DE TA… ALTO … M       132 x35_…          1 35_39         
+6 RENOVACIO… DE TA… ALTO … M       132 x40_…          6 40_44         </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Ya eliminamos la x, ahora podemos cambiar el guión bajo por un guión:</span></span>
+<span></span>
+<span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>rangos_etarios <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>edad</span>, <span class='st'>"x"</span><span class='op'>)</span>,</span>
+<span>         rangos_etarios <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span><span class='op'>(</span><span class='va'>rangos_etarios</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 6 × 8
+  partido    region comuna sexo  total edad  militantes rangos_etarios
+  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;         
+1 RENOVACIO… DE TA… ALTO … M       132 x18_…          0 18-19         
+2 RENOVACIO… DE TA… ALTO … M       132 x20_…          0 20-24         
+3 RENOVACIO… DE TA… ALTO … M       132 x25_…          1 25-29         
+4 RENOVACIO… DE TA… ALTO … M       132 x30_…          0 30-34         
+5 RENOVACIO… DE TA… ALTO … M       132 x35_…          1 35-39         
+6 RENOVACIO… DE TA… ALTO … M       132 x40_…          6 40-44         </code></pre>
+</div>
+<p>Volvemos al gráfico:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Tenemos que crear nuevamente el objeto para que capte las transformaciones que realizamos:</span></span>
+<span></span>
+<span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>df_militantes</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>militantes</span>, y <span class='op'>=</span> <span class='va'>rangos_etarios</span>, fill <span class='op'>=</span> <span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>p</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span>facets <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+</div>
+<p>Otra cosa que podemos hacer es eliminar leyenda, ya que no aporta información. También, cambiaremos los títulos de los facets para que digan claramente “Mujeres” y “Varones”.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span>facets <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'># Tenemos que poner la escala que estamos usando para mostrar la variable sexo</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-18-1.png" width="624" /></p>
+</div>
+<p>Cambiamos los títulos de los facets. Dependiendo de nuestros datos, podemos hacerlo directamente en el gráfico o renombrando las variables en la base de datos.</p>
+<p>Primera opción:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_militantes_s</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sexo <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='va'>sexo</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"M"</span> <span class='op'>=</span> <span class='st'>"Mujeres"</span>, <span class='st'>"V"</span> <span class='op'>=</span> <span class='st'>"Varones"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>m</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>df_militantes_s</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>militantes</span>, y <span class='op'>=</span> <span class='va'>rangos_etarios</span>, fill <span class='op'>=</span> <span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>m</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span>facets <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-19-1.png" width="624" /></p>
+</div>
+<p>Segunda opción:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>,</span>
+<span>             labeller <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/as_labeller.html'>as_labeller</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'M'</span> <span class='op'>=</span> <span class='st'>"Mujeres"</span>, <span class='st'>'V'</span> <span class='op'>=</span> <span class='st'>"Varones"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-20-1.png" width="624" /></p>
+</div>
+<p>También podemos hacer ajustes al tema que estamos usando:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>,</span>
+<span>             labeller <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/as_labeller.html'>as_labeller</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'M'</span> <span class='op'>=</span> <span class='st'>"Mujeres"</span>, <span class='st'>'V'</span> <span class='op'>=</span> <span class='st'>"Varones"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span><span class='op'>)</span>, <span class='co'># Existe el tema theme_roboto en el paquete hrbrthemes.</span></span>
+<span>        title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>face <span class='op'>=</span> <span class='st'>"bold"</span><span class='op'>)</span><span class='op'>)</span> </span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-21-1.png" width="624" /></p>
+</div>
+<p>Cambiaremos los colores:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"dodge"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#d90429"</span>,<span class='st'>"#2b2d42"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>,</span>
+<span>             labeller <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/as_labeller.html'>as_labeller</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'M'</span> <span class='op'>=</span> <span class='st'>"Mujeres"</span>, <span class='st'>'V'</span> <span class='op'>=</span> <span class='st'>"Varones"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Número de militantes de partidos políticos por género"</span>, subtitle <span class='op'>=</span> <span class='st'>"Año 2016"</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>"Número de militantes"</span>, y <span class='op'>=</span> <span class='st'>"Rangos etarios"</span>, caption <span class='op'>=</span> <span class='st'>"Fuente: SERVEL."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span><span class='op'>)</span>, <span class='co'># Existe el tema theme_roboto en el paquete hrbrthemes.</span></span>
+<span>        plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>face <span class='op'>=</span> <span class='st'>"bold"</span><span class='op'>)</span>,</span>
+<span>        strip.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>colour <span class='op'>=</span> <span class='st'>"#ef233c"</span>, face <span class='op'>=</span> <span class='st'>"bold"</span><span class='op'>)</span>,</span>
+<span>        strip.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#edf2f4"</span>, colour <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span><span class='op'>)</span> </span></code></pre>
+</div>
+<p><img src="primeros-pasos_files/figure-html5/unnamed-chunk-22-1.png" width="624" /></p>
+</div>
+<p>Podemos hacer nuestro tema, que será utilizado en el resto de los gráficos.</p>
+<p>¿Qué graficaremos ahora?</p>
+<p>Aquellos gráficos que nos permitirán observar la información de variables continuas.</p>
+<p>Fuentes:</p>
+<ul>
+<li><a href="http://rmarkdown.rstudio.com">R Markdown Website</a>.</li>
+<li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">Create awesome html table with <code>knitr::kable</code> and <code>kableExtra</code></a>.</li>
+<li><a href="https://www.r-bloggers.com/2018/11/explore-your-dataset-in-r/">Explore your dataset in R</a>.</li>
+<li><a href="https://cfss.uchicago.edu/notes/grammar-of-graphics/">Grammar of graphics</a>.</li>
+<li><a href="https://coolors.co/palettes/trending">Paletas de colores</a>.</li>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements">Especificaciones de temas</a>.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
