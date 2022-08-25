@@ -1,10 +1,15 @@
 ---
 title: "Primeros pasos con tidyverse y ggplot2"
 description: |
-  ¿Cómo avanzar en el uso de R?
+  Empezar a trabajar en R puede ser abrumador, por esa razón veremos las principales herramientas del `tidyverse`, las cuáles nos serán útil al momento de limpiar una base de dato o transformar aquellas variables con las que contamos. Además, revisaremos los principios del `ggplot2` para armar gráficos.
 author:
   - name: Soledad Araya
     url: https://snaraya.github.io
+preview: images/preview.png
+categories:
+  - Tutoriales
+  - ICP5006
+  - tidyverse
 date: 08-16-2022
 output:
   distill::distill_article:

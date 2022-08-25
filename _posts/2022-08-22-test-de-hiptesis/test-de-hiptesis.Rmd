@@ -6,7 +6,7 @@ author:
   - name: Soledad Araya
     url: https://snaraya.github.io
 date: 2022-08-22
-preview: images/preview.jpg
+preview: images/preview.png
 categories:
   - Tutoriales
   - ICP5006

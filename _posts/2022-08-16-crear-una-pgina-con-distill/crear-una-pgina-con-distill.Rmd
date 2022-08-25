@@ -1,11 +1,15 @@
 ---
 title: "Cómo hacer una página estática con distill"
 description: |
-  En este post veremos cómo crear(nos) una página
-  estática utilizando el paquete distill.
+    El desarrollo de páginas web estáticas, bookdowns o paquetes en R se ha masificado, especialmente cuando se trata de compartir herramientas en este software libre. Con ese motivo, revisaremos los primeros pasos para diseñar una página con el paquete `distill`.
 author:
   - name: Soledad Araya
     url: https://snaraya.github.io
+preview: images/preview.png
+categories:
+  - Tutoriales
+  - ICP5006
+  - distill
 date: 08-16-2022
 output:
   distill::distill_article:
