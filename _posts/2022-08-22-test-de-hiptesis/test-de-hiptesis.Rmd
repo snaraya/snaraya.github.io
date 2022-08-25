@@ -1,0 +1,238 @@
+---
+title: "Test de hipótesis"
+description: |
+  En el siguiente post revisaremos: (a) Cómo hacer análisis e interpretación de test de hipótesis bivariado, (b) a hacer tablas con `knitr`, (c) a realizar gráficos univariados y bivariados y finalmente (d) revisaremos el calendario con las actividades de la primera parte del semestre.
+author:
+  - name: Soledad Araya
+    url: https://snaraya.github.io
+date: 2022-08-22
+preview: images/preview.jpg
+categories:
+  - Tutoriales
+  - ICP5006
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Taller 03:
+
+## Gráficos univariados y bivariados:
+
+
+
+```{r paquetes}
+library(tidyverse)
+library(sjmisc)
+library(haven)
+library(kableExtra)
+
+options(knitr.kable.NA = '')
+```
+
+La preparación de los datos que utilizaremos hoy se realizó de la siguiente forma. 
+
+El **Proyecto de Opinión Pública de América Latina** más conocido como **LAPOP** es un centro de estudios de opinión y comportamiento. Este centro se destaca por sus altos estándares de calidad en cada uno de los procesos de encuestaje: desde el diseño del cuestionario y la definición de la muestra, el trabajo en terreno a través del pretesteo del cuestionario y el trabajo de campo, y su posterior supervisión; hasta el procesamiento y análisis de los datos. 
+
+En sus inicios, Mitchell A. Seligson (fundador y Senior Advisor de LAPOP) inició LAPOP para medir e investigar los valores democráticos en Costa Rica, y con el tiempo se fue ampliando al resto de América Latina. en este caso particular, nosotros revisaremos la encuesta **Barómetro de las Américas** que estudia los valores democráticos de países en Norteamérica, Suramérica y Centroamérica. 
+
+Pueden encontrar las bases de datos en la página principal de [LAPOP](http://datasets.americasbarometer.org/database/index.php?freeUser=true). 
+
+```{r preparacion datos, eval = F}
+df <- haven::read_dta("data/2004-2018 LAPOP AmericasBarometer Merge (v1.0FREE).dta")
+
+colnames(df)
+
+p_seleccion <- readxl::read_excel("input/220809 - Preguntas LAPOP.xlsx") %>% 
+  mutate(year_2010 = str_to_lower(year_2010)) %>% 
+  filter(!is.na(year_2010))
+
+v_seleccion <- p_seleccion$year_2010  
+
+frq(df, pais)
+
+df_lapop_chile <- df %>% 
+  select(pais:odd, v_seleccion) %>% 
+  filter(pais == 13)
+
+write_rds(df_lapop_chile, "output/lapop_chile_220824.rds")
+write_dta(df_lapop_chile, "output/lapop_chile_220824.dta")
+
+df_lapop_int <- df %>% 
+  select(pais, v_seleccion) %>% 
+  write_dta(., "output/lapop_int_220824.dta") %>% 
+  write_rds(., "output/lapop_int_220824.rds")
+
+```
+
+## Pruebas de relación bivariada
+
+```{r}
+df <- readRDS("output/lapop_chile_220824.rds")
+```
+
+Nuestra base de datos contiene las siguientes variables:
+
+```{r echo = F}
+readxl::read_excel("input/220809 - Tablas.xlsx") %>% 
+  knitr::kable(., align = 'lccccccccc') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  column_spec(1, width_min = "6cm", bold = T) %>% 
+  column_spec(2, width_min = "3cm", border_left = T) %>% 
+  column_spec(3:10, width_min = "2cm", border_left = T) %>% 
+  scroll_box(width = "100%", height = "400px")
+```
+
+
+
+## Hacer tablas en R Markdown
+
+Hay diferentes formas de hacerlo. Se pueden generar directamente desde la base de datos o con un archivo externo. Para hacer las tablas que ven en este documento, lo hice de manera externa porque ya tenía las hojas de cálculo pre-llenadas con la información.
+
+Aún así, veamos algunos conceptos básicos:
+
+En R Markdown, sólo necesitan cargar el paquete `kableExtra` para acceder a más funciones y opciones al momento de generarlas.
+
+```{r echo = T, results = 'hide'}
+library(kableExtra)
+```
+
+Primero, generaremos una tabla con la información de LAPOP. Para eso, utilizaremos la variable PN4 de nuestra base de datos `lapop_int_220824.rds`
+
+```{r echo = T, results = 'hide'}
+df_lapop_int <- read_dta("output/lapop_int_220824.dta")
+```
+
+Como vimos, siempre es bueno dar una mirada a las bases de datos antes de utilizarla. Para eso, utilizaremos `skimr::skim()`:
+
+```{r}
+skimr::skim(df_lapop_int)
+```
+
+Como podemos observar, hay una inmensa cantidad de NA. Esto sucede por varios motivos: 
+
+Ahora, veremos en mayor detalle nuestra variable de interés, PN4:
+
+```{r}
+frq(df_lapop_int, pn4)
+```
+
+La pregunta "*En general, usted diría que está muy satisfecho, satisfecho, insatisfecho o muy insatisfecho con la forma en que la democracia funciona*" empezó a aparecer en la encuesta en el año 2008, eso podría ser una de las explicaciones para el gran número de NAs, pero también está el componente de no-respuesta. Ahora, veamos los resultados por país. En DESUC desarrollamos un paquete que nos permite hacer tablas de manera mucho más rápida y ordenada. Para eso, debemos usar `tabla_vars_segmentos()`.
+
+```{r}
+library(desuctools)
+
+tabla_pais_pn4 <- tabla_vars_segmentos(df_lapop_int,
+                                       .vars = vars(pn4),
+                                       .segmentos = vars(pais),
+                                       total = T)
+```
+
+Utilizamos esta función para hacer un `summarise` de los datos sin perder, por ejemplo, las etiquetas de cada variable. Esta base de datos la podemos utilizar para hacer tablas como también para hacer gráficos, de hecho, facilita mucho el trabajo con `ggplot2`.
+
+```{r}
+tabla_pais_pn4 %>% 
+  knitr::kable(.) %>% # Hay algunas funciones que no nos permiten dejar el argumento 'data' vacío, para eso usamos el '.'
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  scroll_box(width = "100%", height = "300px")
+```
+
+Con `scroll_box` podemos limitar el espacio que la tabla toma en nuestra página principal.
+
+Esta tabla tiene potencial, pero debemos mejorarla. Para eso podemos usar `select` y dejar sólo las columnas de interés:
+
+```{r}
+tabla_pais_pn4 %>% 
+  select(2,5:7) %>%
+  knitr::kable(.) %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  scroll_box(width = "100%", height = "300px")
+```
+
+Ya eliminamos las columnas que no eran necesarias. Ahora haremos tres cambios:
+
+1. Uniremos las celdas repetidas en la columna *pais*, 
+2. Cambiaremos el título de las columnas y
+3. Cambiaremos el formato en que se presenta el porcentaje.
+
+### 1. Colapsar las celdas repetidas de la primera columna con `collapse_rows`.
+
+```{r}
+tabla_pais_pn4 %>% 
+  select(2,5:7) %>% 
+  knitr::kable(.) %>% 
+  collapse_rows(columns = 1, valign = 'top') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  scroll_box(width = "100%", height = "300px")
+```
+
+### 2. Cambiaremos el título de las columnas y agregaremos el título de la tabla con los argumentos `col.names` y `caption` en `knitr::kable`.
+
+```{r}
+tabla_pais_pn4 %>% 
+  select(2,5:7) %>% 
+  knitr::kable(., 
+               col.names = c('País','Categoría','Casos','%'),
+               caption = 'Tabla 1: Respuestas acumulativas LAPOP 2008-2018.<br>
+               Pregunta: En general, usted diría que está muy satisfecho, satisfecho, insatisfecho o <br>
+               muy insatisfecho con la forma en que la democracia funciona en [pais].',
+               align = 'llrr') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>%
+  column_spec(1, width_min = "3cm") %>% 
+  column_spec(2, width_min = "3cm") %>% 
+  column_spec(3:4, width_min = "2cm") %>% 
+  row_spec(0, align = 'c') %>% 
+  collapse_rows(columns = 1, valign = "top") %>% 
+  scroll_box(width = "100%", height = "300px")
+
+```
+
+### 3. Por último, cambiaremos el formato del porcentaje que aparece en la última columna con `mutate`. Hay diferentes formas de hacerlo, en este caso utilizaremos el paquete `scales` que tiene la función `percent` que cambia de manera automática la variable según el formato que le pidamos. Es útil también para formatear a porcentaje u otro tipo de formato que necesitamos normalmente para graficar, cómo pesos.
+
+```{r}
+tabla_pais_pn4 %>% 
+  select(2,5:7) %>% 
+  mutate(prop = scales::percent(prop, accuracy = 2)) %>% 
+  knitr::kable(., 
+               col.names = c('País','Categoría','Casos','%'),
+               caption = 'Tabla 1: Respuestas acumulativas LAPOP 2008-2018.<br>
+               Pregunta: En general, usted diría que está muy satisfecho, satisfecho, insatisfecho o <br>
+               muy insatisfecho con la forma en que la democracia funciona en [pais].',
+               align = 'llrr') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>%
+  column_spec(1, width_min = "3cm") %>% 
+  column_spec(2, width_min = "3cm") %>% 
+  column_spec(3:4, width_min = "2cm") %>% 
+  row_spec(0, align = 'c') %>% 
+  collapse_rows(columns = 1, valign = "top") %>% 
+  scroll_box(width = "100%", height = "300px")
+
+```
+
+Si bien las tablas siempre son útiles para leer la información al momento de hacer un análisis exploratorio, es diferente cuando queremos mostrar nuestros datos. **Esta información la podemos observar también a través de gráficos.**
+
+## Gráficos univariados:
+
+
+## Gráficos bivariados:
+
+# Actividades del curso:
+
+Para la primera parte del curso, este será el avance que deberán ir logrando en sus páginas personales. La idea es que se vayan acostumbrando a usar R Markdown. Aprender R Markdown no solo los ayudará a generar este tipo de páginas, sino también a hacer todo tipo de informe y documentos académicos con todas las facilidades que entrega esto. Si no saben hacer algo, lo mejor que pueden hacer es revisar la documentación. Por ejemplo, [yo tengo que meterme siempre a leer cómo configurar cada chunk porque soy incapaz de aprendérmelo de memoria](https://rmarkdown.rstudio.com/lesson-3.html).
+
+```{r echo = F}
+readxl::read_excel("input/220809 - Tablas.xlsx", sheet = 'Sheet2') %>% 
+  knitr::kable(., align = 'clcl') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  column_spec(1, width_min = "2cm") %>% 
+  column_spec(2, width_min = "4cm", border_left = T) %>% 
+  column_spec(3, width_min = "3cm", border_left = T) %>% 
+  column_spec(4, width_min = "3cm", border_left = T) %>% 
+  row_spec(0, align = 'c') %>% 
+  pack_rows("Primera parte", 1, 4)
+```
+
+
+
