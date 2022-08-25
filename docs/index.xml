@@ -12,34 +12,36 @@
       <title>Test de hipótesis</title>
       <dc:creator>Soledad Araya</dc:creator>
       <link>https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis</link>
-      <description>En el siguiente post revisaremos:
-  * Cómo hacer análisis e interpretación de test de hipótesis bivariado.
-  * Hacer tablas con `knitr`.
-  * Realizar gráficos univariados y bivariados.
-  * Calendario con las actividades de la primera parte del semestre.</description>
+      <description>En el siguiente post revisaremos: (a) Cómo hacer análisis e interpretación de test de hipótesis bivariado, (b) a hacer tablas con `knitr`, (c) a realizar gráficos univariados y bivariados y finalmente (d) revisaremos el calendario con las actividades de la primera parte del semestre.</description>
       <category>Tutoriales</category>
       <category>ICP5006</category>
       <guid>https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis</guid>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis/images/preview.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis/images/preview.png" medium="image" type="image/png" width="1392" height="832"/>
     </item>
     <item>
       <title>Cómo hacer una página estática con distill</title>
       <dc:creator>Soledad Araya</dc:creator>
       <link>https://snaraya.github.io/posts/2022-08-16-crear-una-pgina-con-distill</link>
-      <description>En este post veremos cómo crear(nos) una página
-estática utilizando el paquete distill.</description>
+      <description>El desarrollo de páginas web estáticas, bookdowns o paquetes en R se ha masificado, especialmente cuando se trata de compartir herramientas en este software libre. Con ese motivo, revisaremos los primeros pasos para diseñar una página con el paquete `distill`.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>distill</category>
       <guid>https://snaraya.github.io/posts/2022-08-16-crear-una-pgina-con-distill</guid>
       <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://snaraya.github.io/posts/2022-08-16-crear-una-pgina-con-distill/images/preview.png" medium="image" type="image/png" width="1392" height="832"/>
     </item>
     <item>
       <title>Primeros pasos con tidyverse y ggplot2</title>
       <dc:creator>Soledad Araya</dc:creator>
       <link>https://snaraya.github.io/posts/2022-08-17-primeros-pasos</link>
-      <description>¿Cómo avanzar en el uso de R?</description>
+      <description>Empezar a trabajar en R puede ser abrumador, por esa razón veremos las principales herramientas del `tidyverse`, las cuáles nos serán útil al momento de limpiar una base de dato o transformar aquellas variables con las que contamos. Además, revisaremos los principios del `ggplot2` para armar gráficos.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>tidyverse</category>
       <guid>https://snaraya.github.io/posts/2022-08-17-primeros-pasos</guid>
       <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://snaraya.github.io/posts/2022-08-17-primeros-pasos/primeros-pasos_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://snaraya.github.io/posts/2022-08-17-primeros-pasos/images/preview.png" medium="image" type="image/png" width="1392" height="832"/>
     </item>
   </channel>
 </rss>
