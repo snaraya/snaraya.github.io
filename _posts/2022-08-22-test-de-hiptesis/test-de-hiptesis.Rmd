@@ -17,22 +17,24 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Taller 03:
-
-## Gráficos univariados y bivariados:
-
-
-
-```{r paquetes}
-library(tidyverse)
-library(sjmisc)
-library(haven)
-library(kableExtra)
-
+```{r include=FALSE}
 options(knitr.kable.NA = '')
 ```
 
-La preparación de los datos que utilizaremos hoy se realizó de la siguiente forma. 
+# Taller 03:
+
+***
+
+En la clase anterior, vimos los diferentes tipos de datos con los que nos podríamos encontrar. Estos pueden dividirse en *datos cualitativos* y *datos cuantitativos* dependiendo en el objeto que estén midiendo. Los *datos cuantitativos* pueden er clasificados como métricos y no métricos, basado en las características que definen las distancia entre los valores de la escala. 
+
+Los datos no-métrico también los podemos encontrar como "datos cualitativos" ya que representan valores no numéricos. La más simple es una escala **binaria** donde sólo encontramos dos categorías. Las escalas **nominales** u **ordinales** pueden tener varias categorías dependiendo de la variable de interés.
+
+Los datos métricos pueden ser clasificados en datos discretos y continuos. Cuando nos referimos a datos discretos, hablamos de datos que pueden ser cuantificados y expresado en valores enteros. Cuando los datos pueden ser cuantificados con los valores reales, se dice que es una variable continua.
+
+![Figura 1. Tipos de datos](images/figura.png)
+Considerando el tipo de variable que tenemos en nuestro análisis, es el tipo de test de hipótesis que debemos realizar. Para la siguiente sección, utilizaremos el concepto "categórico" para hablar de las variables no-métricas o "cualitativas" y usaremos el concepto "continuo" para las variables métricas.
+
+## Gráficos univariados y bivariados:
 
 El **Proyecto de Opinión Pública de América Latina** más conocido como **LAPOP** es un centro de estudios de opinión y comportamiento. Este centro se destaca por sus altos estándares de calidad en cada uno de los procesos de encuestaje: desde el diseño del cuestionario y la definición de la muestra, el trabajo en terreno a través del pretesteo del cuestionario y el trabajo de campo, y su posterior supervisión; hasta el procesamiento y análisis de los datos. 
 
@@ -40,40 +42,24 @@ En sus inicios, Mitchell A. Seligson (fundador y Senior Advisor de LAPOP) inici�
 
 Pueden encontrar las bases de datos en la página principal de [LAPOP](http://datasets.americasbarometer.org/database/index.php?freeUser=true). 
 
-```{r preparacion datos, eval = F}
-df <- haven::read_dta("data/2004-2018 LAPOP AmericasBarometer Merge (v1.0FREE).dta")
+Utilizaremos esta base de datos para hacer el siguiente ejercicio:
 
-colnames(df)
+Primero, cargaremos los paquetes que utilizaremos en esta sesión:
 
-p_seleccion <- readxl::read_excel("input/220809 - Preguntas LAPOP.xlsx") %>% 
-  mutate(year_2010 = str_to_lower(year_2010)) %>% 
-  filter(!is.na(year_2010))
-
-v_seleccion <- p_seleccion$year_2010  
-
-frq(df, pais)
-
-df_lapop_chile <- df %>% 
-  select(pais:odd, v_seleccion) %>% 
-  filter(pais == 13)
-
-write_rds(df_lapop_chile, "output/lapop_chile_220824.rds")
-write_dta(df_lapop_chile, "output/lapop_chile_220824.dta")
-
-df_lapop_int <- df %>% 
-  select(pais, v_seleccion) %>% 
-  write_dta(., "output/lapop_int_220824.dta") %>% 
-  write_rds(., "output/lapop_int_220824.rds")
-
+```{r paquetes, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(sjmisc)
+library(haven)
+library(kableExtra)
 ```
 
-## Pruebas de relación bivariada
+Y cargaremos la base de datos con variables ya seleccionadas:
 
 ```{r}
-df <- readRDS("output/lapop_chile_220824.rds")
+df_lapop_chile <- readRDS("output/lapop_chile_220824.rds")
 ```
 
-Nuestra base de datos contiene las siguientes variables:
+Entonces, nuestra base de datos contiene las siguientes variables:
 
 ```{r echo = F}
 readxl::read_excel("input/220809 - Tablas.xlsx") %>% 
@@ -85,7 +71,105 @@ readxl::read_excel("input/220809 - Tablas.xlsx") %>%
   scroll_box(width = "100%", height = "400px")
 ```
 
+Las variables `q1` y `q2` contienen las respuestas a las categorías de sexo y edad del entrevistado. En este tipo de base de datos --encuestas a personas-- es difícil tener números continuos que nos ayuden al análisis. En este caso, utilizaremos la edad como una variable continua, y la variable `EFF1` como variable categórica.
 
+### Datos continuos:
+
+Los *histogramas* son los gráficos que se usan normalmente para graficar variables continuas porque muestran la distribución de los valores. Esto nos permite ver la distribución de las edades de las personas encuestadas en el Barómetro de las Américas desde el 2004 al 2008.
+
+```{r message=F}
+df_lapop_chile %>% 
+  ggplot(aes(x = q2)) +
+  geom_histogram()
+```
+
+Probablemente, nos gustaría ver la distribución de las edades de acuerdo a la ola de la encuesta. Para eso usamos `facet_grid` con la variable que nos interesa para segmentar el gráfico, que en este caso es `year`. En este caso, podríamos haber elegido el sexo y ver cómo se distribuyen las edades según el sexo de las personas.
+
+```{r message=F}
+df_lapop_chile %>% 
+  ggplot(aes(x = q2)) +
+  geom_histogram() +
+  facet_grid(~year) +
+  theme_minimal()
+```
+
+Quizás es necesario cambiar las etiquetas en el eje x, para ver con mayor exactitud como se distribuyen las edades. Pra eso usaremos `scale_x_continuous` y el argumento `breaks`.
+
+```{r message=FALSE}
+df_lapop_chile %>% 
+  ggplot(aes(x = q2)) +
+  geom_histogram() +
+  scale_x_continuous(breaks = seq(0,100, by = 10)) +
+  facet_grid(~year) +
+  theme_minimal()
+```
+
+Finalmente, podemos cambiar los títulos y el tema de nuestros histograma:
+
+```{r message=FALSE}
+df_lapop_chile %>% 
+  ggplot(aes(x = q2)) +
+  geom_histogram(color = "#ffafcc", fill = "#ffc8dd", alpha = 0.5) + # Colores
+  geom_density(aes(y = ..count..), color = "#ff006e") + # Gráfico de densidad
+  scale_x_continuous(breaks = seq(0,100, by = 10)) +
+  labs(title = "Figura 2. Histograma de las edades de los encuestados en el\nBarómetro de las Américas, ola 2006 y 2008.", x = "Edad", y = "Frecuencia") + # Títulos
+  facet_grid(rows = vars(year)) +
+  theme_minimal(base_family = "Roboto Condensed")
+```
+
+También podemos agregar una curva de densidad sobre el histograma, incluso la media, la mediana y los cuartiles de cada grupo.
+
+### Datos categóricos:
+
+Revisamos la frecuencia de acuerdo al año:
+
+```{r}
+frq(df_lapop_chile, year)
+```
+
+Para esta prgunta utilizaremos un *gráfico de barras*. Un gráfico de barras es una forma de resumir un conjunto de datos por categorías. Cada barra representa una categoría y la altura de la barra es proporcional a un tipo de agregación específica: usualmente es la frecuencia. Esta pregunta no fue formulada en la encuesta para el año 2006. Así que veremos la frecuencia para el año 2008:
+
+```{r}
+df_lapop_chile %>% 
+  filter(year == 2008) %>% 
+  frq(., eff1)
+```
+
+Realizamos el gráfico:
+
+```{r message=FALSE}
+df_lapop_chile %>% 
+  filter(year == 2008) %>% 
+  ggplot(aes(x = as_factor(eff1))) +
+  geom_bar(color = "#ffafcc", fill = "#ffc8dd", alpha = 0.5) + # Colores
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) +
+  labs(title = "Figura 3. Gráfico de barras 'Interés del gobierno' (EFF1) para el año 2008.",
+       subtitle = "Pregunta: 'A los que gobiernan el país le interesa lo que piensa la gente como usted\n¿Hasta qué punto está de acuerdo o en desacuerdo con esta frase?'", 
+       x = " ", y = "Frecuencia") + # Títulos
+  theme_minimal(base_family = "Roboto Condensed")
+```
+
+¿Para qué sirve cada uno de los argumentos?
+
+### Cruce continuo-categórico:
+
+Para este cruce, haremos un *boxplot*: veremos la dispersión de la edad para la pregunta eff1. El boxplot o gráfico de caja es un método estandarizado para graficar una serie de datos numéricos a través de sus cuartiles. De esta manera, se muestran a simple vista la mediana y los cuartiles de los datos, y también puede representar sus valores atípicos.
+
+```{r}
+df_lapop_chile %>% 
+  filter(year == 2008) %>% 
+  ggplot(aes(x = as_factor(eff1), y = q2)) +
+  geom_boxplot(fill = "#a3b18a", color = "#3a5a40") +
+  geom_jitter(shape = 16, position = position_jitter(0.2), color = "#588157") +
+  stat_summary(fun = mean, colour="black", geom="text", show_guide = FALSE,
+               vjust=-0.7, family = "Roboto Condensed",
+               aes(label = round(..y.., digits = 1))) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) +
+    labs(title = "Figura 4. Boxplot 'Interés del gobierno' (EFF1) por edad de los encuestados (q2) para el año 2008.",
+       subtitle = "Pregunta: 'A los que gobiernan el país le interesa lo que piensa la gente como usted\n¿Hasta qué punto está de acuerdo o en desacuerdo con esta frase?'", 
+       x = " ", y = "Edad") +
+  theme_minimal(base_family = "Roboto Condensed")
+```
 
 ## Hacer tablas en R Markdown
 
@@ -101,8 +185,8 @@ library(kableExtra)
 
 Primero, generaremos una tabla con la información de LAPOP. Para eso, utilizaremos la variable PN4 de nuestra base de datos `lapop_int_220824.rds`
 
-```{r echo = T, results = 'hide'}
-df_lapop_int <- read_dta("output/lapop_int_220824.dta")
+```{r}
+df_lapop_int <- readRDS("output/lapop_int_220824.rds")
 ```
 
 Como vimos, siempre es bueno dar una mirada a las bases de datos antes de utilizarla. Para eso, utilizaremos `skimr::skim()`:
@@ -213,11 +297,6 @@ tabla_pais_pn4 %>%
 
 Si bien las tablas siempre son útiles para leer la información al momento de hacer un análisis exploratorio, es diferente cuando queremos mostrar nuestros datos. **Esta información la podemos observar también a través de gráficos.**
 
-## Gráficos univariados:
-
-
-## Gráficos bivariados:
-
 # Actividades del curso:
 
 Para la primera parte del curso, este será el avance que deberán ir logrando en sus páginas personales. La idea es que se vayan acostumbrando a usar R Markdown. Aprender R Markdown no solo los ayudará a generar este tipo de páginas, sino también a hacer todo tipo de informe y documentos académicos con todas las facilidades que entrega esto. Si no saben hacer algo, lo mejor que pueden hacer es revisar la documentación. Por ejemplo, [yo tengo que meterme siempre a leer cómo configurar cada chunk porque soy incapaz de aprendérmelo de memoria](https://rmarkdown.rstudio.com/lesson-3.html).
@@ -234,5 +313,33 @@ readxl::read_excel("input/220809 - Tablas.xlsx", sheet = 'Sheet2') %>%
   pack_rows("Primera parte", 1, 4)
 ```
 
+***
 
+Preparación de la base de datos de LAPOP:
+
+```{r preparacion datos, eval = F}
+df <- haven::read_dta("data/2004-2018 LAPOP AmericasBarometer Merge (v1.0FREE).dta")
+
+colnames(df)
+
+p_seleccion <- readxl::read_excel("input/220809 - Preguntas LAPOP.xlsx") %>% 
+  mutate(year_2010 = str_to_lower(year_2010)) %>% 
+  filter(!is.na(year_2010))
+
+v_seleccion <- p_seleccion$year_2010  
+
+frq(df, pais)
+
+df_lapop_chile <- df %>% 
+  select(pais, wave, year, v_seleccion, q2) %>% 
+  filter(pais == 13) %>% 
+  write_rds("output/lapop_chile_220824.rds") %>% 
+  write_dta("output/lapop_chile_220824.dta")
+
+df_lapop_int <- df %>% 
+  select(pais, wave, year, v_seleccion, q2) %>% 
+  write_dta(., "output/lapop_int_220824.dta") %>% 
+  write_rds(., "output/lapop_int_220824.rds")
+
+```
 

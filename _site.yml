@@ -5,6 +5,10 @@ description: |
   Blank Space
 output_dir: "docs"
 theme: theme.css
+collections:
+  posts:
+    categories: false
+    citations: false
 navbar:
   right:
     - text: "Home"
