@@ -1547,7 +1547,8 @@ Considerando el tipo de variable que tenemos en nuestro análisis, es el tipo de
 <p>Y cargaremos la base de datos con variables ya seleccionadas:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_lapop_chile</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readRDS.html'>readRDS</a></span><span class='op'>(</span><span class='st'>"output/lapop_chile_220824.rds"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_lapop_chile</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readRDS.html'>readRDS</a></span><span class='op'>(</span><span class='st'>"output/lapop_chile_220824.rds"</span><span class='op'>)</span></span>
+<span><span class='va'>df_lapop_chile</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://haven.tidyverse.org/reference/read_dta.html'>read_dta</a></span><span class='op'>(</span><span class='st'>"output/lapop_chile_220824.dta"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <p>Entonces, nuestra base de datos contiene las siguientes variables:</p>
@@ -2438,9 +2439,11 @@ Q1
 <p>Los <em>histogramas</em> son los gráficos que se usan normalmente para graficar variables continuas porque muestran la distribución de los valores. Esto nos permite ver la distribución de las edades de las personas encuestadas en el Barómetro de las Américas desde el 2004 al 2008.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_lapop_chile</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>histograma</span> <span class='op'>&lt;-</span> <span class='va'>df_lapop_chile</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>q2</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>histograma</span></span></code></pre>
 </div>
 <p><img src="test-de-hiptesis_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
@@ -2476,7 +2479,7 @@ Q1
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_density.html'>geom_density</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>..count..</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"#ff006e"</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'># Gráfico de densidad</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_x_continuous</a></span><span class='op'>(</span>breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>100</span>, by <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Figura 2. Histograma de las edades de los encuestados en el\nBarómetro de las Américas, ola 2006 y 2008."</span>, x <span class='op'>=</span> <span class='st'>"Edad"</span>, y <span class='op'>=</span> <span class='st'>"Frecuencia"</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'># Títulos</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></span><span class='op'>(</span>rows <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span>base_family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="test-de-hiptesis_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
@@ -2543,8 +2546,8 @@ Value |             Label |   N | Raw % | Valid % | Cum. %
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df_lapop_chile</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>==</span> <span class='fl'>2008</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://forcats.tidyverse.org/reference/as_factor.html'>as_factor</a></span><span class='op'>(</span><span class='va'>eff1</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>q2</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#a3b18a"</span>, color <span class='op'>=</span> <span class='st'>"#3a5a40"</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_jitter.html'>geom_jitter</a></span><span class='op'>(</span>shape <span class='op'>=</span> <span class='fl'>16</span>, position <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/position_jitter.html'>position_jitter</a></span><span class='op'>(</span><span class='fl'>0.2</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"#588157"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#a3b18a"</span>, color <span class='op'>=</span> <span class='st'>"#3a5a40"</span>, alpha <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/stat_summary.html'>stat_summary</a></span><span class='op'>(</span>fun <span class='op'>=</span> <span class='va'>mean</span>, colour<span class='op'>=</span><span class='st'>"black"</span>, geom<span class='op'>=</span><span class='st'>"text"</span>, show_guide <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
 <span>               vjust<span class='op'>=</span><span class='op'>-</span><span class='fl'>0.7</span>, family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span>,</span>
 <span>               <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>label <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>..y..</span>, digits <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
@@ -2554,7 +2557,24 @@ Value |             Label |   N | Raw % | Valid % | Cum. %
 <span>       x <span class='op'>=</span> <span class='st'>" "</span>, y <span class='op'>=</span> <span class='st'>"Edad"</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span>base_family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="test-de-hiptesis_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+<img src="test-de-hiptesis_files/figure-html5/unnamed-chunk-11-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://strengejacke.github.io/sjmisc/reference/frq.html'>frq</a></span><span class='op'>(</span><span class='va'>df_lapop_chile</span>, <span class='va'>eff1</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Leaders Are Interested in What People Think (eff1) &lt;numeric&gt;
+# total N=3044  valid N=1478  mean=3.62  sd=1.81
+
+Value |             Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------
+    1 | Strongly Disagree |  285 |  9.36 |   19.28 |  19.28
+    2 |                 2 |  155 |  5.09 |   10.49 |  29.77
+    3 |                 3 |  219 |  7.19 |   14.82 |  44.59
+    4 |                 4 |  316 | 10.38 |   21.38 |  65.97
+    5 |                 5 |  271 |  8.90 |   18.34 |  84.30
+    6 |                 6 |  145 |  4.76 |    9.81 |  94.11
+    7 |    Strongly Agree |   87 |  2.86 |    5.89 | 100.00
+ &lt;NA&gt; |              &lt;NA&gt; | 1566 | 51.45 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <h2 id="hacer-tablas-en-r-markdown">Hacer tablas en R Markdown</h2>
 <p>Hay diferentes formas de hacerlo. Se pueden generar directamente desde la base de datos o con un archivo externo. Para hacer las tablas que ven en este documento, lo hice de manera externa porque ya tenía las hojas de cálculo pre-llenadas con la información.</p>
@@ -10638,8 +10658,7 @@ Very Dissatisfied
 <span><span class='st'>               muy insatisfecho con la forma en que la democracia funciona en [pais].'</span>,</span>
 <span>               align <span class='op'>=</span> <span class='st'>'llrr'</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"striped"</span><span class='op'>)</span>, html_font <span class='op'>=</span> <span class='st'>'Roboto Condensed'</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>2</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, width_min <span class='op'>=</span> <span class='st'>"3cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>:</span><span class='fl'>4</span>, width_min <span class='op'>=</span> <span class='st'>"2cm"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/row_spec.html'>row_spec</a></span><span class='op'>(</span><span class='fl'>0</span>, align <span class='op'>=</span> <span class='st'>'c'</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/collapse_rows.html'>collapse_rows</a></span><span class='op'>(</span>columns <span class='op'>=</span> <span class='fl'>1</span>, valign <span class='op'>=</span> <span class='st'>"top"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
@@ -14167,7 +14186,7 @@ Primer commit: modelos de regresión
 <span>  <span class='fu'><a href='https://readr.tidyverse.org/reference/read_rds.html'>write_rds</a></span><span class='op'>(</span><span class='va'>.</span>, <span class='st'>"output/lapop_int_220824.rds"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

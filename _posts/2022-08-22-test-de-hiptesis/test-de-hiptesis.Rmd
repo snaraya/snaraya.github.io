@@ -53,10 +53,13 @@ library(haven)
 library(kableExtra)
 ```
 
+
 Y cargaremos la base de datos con variables ya seleccionadas:
+
 
 ```{r}
 df_lapop_chile <- readRDS("output/lapop_chile_220824.rds")
+df_lapop_chile <- read_dta("output/lapop_chile_220824.dta")
 ```
 
 Entonces, nuestra base de datos contiene las siguientes variables:
@@ -78,9 +81,11 @@ Las variables `q1` y `q2` contienen las respuestas a las categorías de sexo y e
 Los *histogramas* son los gráficos que se usan normalmente para graficar variables continuas porque muestran la distribución de los valores. Esto nos permite ver la distribución de las edades de las personas encuestadas en el Barómetro de las Américas desde el 2004 al 2008.
 
 ```{r message=F}
-df_lapop_chile %>% 
+histograma <- df_lapop_chile %>% 
   ggplot(aes(x = q2)) +
   geom_histogram()
+
+histograma
 ```
 
 Probablemente, nos gustaría ver la distribución de las edades de acuerdo a la ola de la encuesta. Para eso usamos `facet_grid` con la variable que nos interesa para segmentar el gráfico, que en este caso es `year`. En este caso, podríamos haber elegido el sexo y ver cómo se distribuyen las edades según el sexo de las personas.
@@ -113,8 +118,9 @@ df_lapop_chile %>%
   geom_density(aes(y = ..count..), color = "#ff006e") + # Gráfico de densidad
   scale_x_continuous(breaks = seq(0,100, by = 10)) +
   labs(title = "Figura 2. Histograma de las edades de los encuestados en el\nBarómetro de las Américas, ola 2006 y 2008.", x = "Edad", y = "Frecuencia") + # Títulos
-  facet_grid(rows = vars(year)) +
+  facet_grid(cols = vars(year)) +
   theme_minimal(base_family = "Roboto Condensed")
+
 ```
 
 También podemos agregar una curva de densidad sobre el histograma, incluso la media, la mediana y los cuartiles de cada grupo.
@@ -159,8 +165,8 @@ Para este cruce, haremos un *boxplot*: veremos la dispersión de la edad para la
 df_lapop_chile %>% 
   filter(year == 2008) %>% 
   ggplot(aes(x = as_factor(eff1), y = q2)) +
-  geom_boxplot(fill = "#a3b18a", color = "#3a5a40") +
   geom_jitter(shape = 16, position = position_jitter(0.2), color = "#588157") +
+  geom_boxplot(fill = "#a3b18a", color = "#3a5a40", alpha = 0.5) +
   stat_summary(fun = mean, colour="black", geom="text", show_guide = FALSE,
                vjust=-0.7, family = "Roboto Condensed",
                aes(label = round(..y.., digits = 1))) +
@@ -169,6 +175,8 @@ df_lapop_chile %>%
        subtitle = "Pregunta: 'A los que gobiernan el país le interesa lo que piensa la gente como usted\n¿Hasta qué punto está de acuerdo o en desacuerdo con esta frase?'", 
        x = " ", y = "Edad") +
   theme_minimal(base_family = "Roboto Condensed")
+
+frq(df_lapop_chile, eff1)
 ```
 
 ## Hacer tablas en R Markdown
@@ -264,8 +272,7 @@ tabla_pais_pn4 %>%
                muy insatisfecho con la forma en que la democracia funciona en [pais].',
                align = 'llrr') %>% 
   kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>%
-  column_spec(1, width_min = "3cm") %>% 
-  column_spec(2, width_min = "3cm") %>% 
+  column_spec(1:2, width_min = "3cm") %>% 
   column_spec(3:4, width_min = "2cm") %>% 
   row_spec(0, align = 'c') %>% 
   collapse_rows(columns = 1, valign = "top") %>% 
@@ -275,7 +282,7 @@ tabla_pais_pn4 %>%
 
 ### 3. Por último, cambiaremos el formato del porcentaje que aparece en la última columna con `mutate`. Hay diferentes formas de hacerlo, en este caso utilizaremos el paquete `scales` que tiene la función `percent` que cambia de manera automática la variable según el formato que le pidamos. Es útil también para formatear a porcentaje u otro tipo de formato que necesitamos normalmente para graficar, cómo pesos.
 
-```{r}
+```{r eval = F}
 tabla_pais_pn4 %>% 
   select(2,5:7) %>% 
   mutate(prop = scales::percent(prop, accuracy = 2)) %>% 
