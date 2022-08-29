@@ -62,17 +62,17 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       20px;
-  --text-color:       #f7ede2;
+  --text-color:       #f5cac3;
   --text-size:        15px;
   --hover-color:      #f28482;
-  --bkgd-color:       #f5cac3;
+  --bkgd-color:       #84a59d;
 }
 
 .distill-site-footer {
-  --text-color:       #f7ede2;
+  --text-color:       #f5cac3;
   --text-size:        15px;
   --hover-color:      #f28482;
-  --bkgd-color:       #f5cac3;
+  --bkgd-color:       #84a59d;
 }
 
 /*-- Additional custom styles --*/

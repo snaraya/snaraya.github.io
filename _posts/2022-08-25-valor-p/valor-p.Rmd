@@ -1,23 +1,29 @@
 ---
-title: "valor p"
+title: "Valor-p"
 description: |
-  A short description of the post.
+  Discusiones en torno al valor-p.
 author:
   - name: Soledad Araya
     url: https://snaraya.github.io
 date: 2022-08-25
+preview: images/preview.png
+categories:
+  - Contenido teórico
+  - ICP5006
+bibliography: valor-p.bib
 output:
   distill::distill_article:
     self_contained: false
 ---
 
+Cuando trabajamos con modelos de regresión, usualmente usamos el **valor-p** o **valor crítico** para hablar de la significancia estadística de nuestra variable(s) independiente(s) sobre la variable dependiente. A pesar de ser un valor muy usado en la investigación, sobre todo en las ciencias sociales, suele ser poco cuestionado. "*Publish or perish*" es un aforismo utilizado en la academia para describir la presión de publicar para tener una carrera exitosa. Esta mentalidad --reforzada por las universidades-- no deja espacio para el cuestionamiento de este concepto que acepta o desacredita la hipótesis sostenida por los/as autores, y muchas veces es uno de los factores decisivos para ser publicados en revistas académicas. De esa manera, el valor-p no sólo tiene significancia estadística, sino que también tiene repercusión en la forma de hacer ciencia en las ciencias sociales. 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+El valor-p es difícil de interpretar correctamente. Incluso R.A. Fisher no pudo explicar exactamente su significado al momento de hacer inferencias estadísticas. Él propuso un sistema informal que *podía ser usado*, pero nunca pudo escribir de manera directa cuál era su valor desde el punto de vista inferencial. Para él, el valor-p era un guia numérica de la fuerza de la evidencia en contra de la hipótesis nula: no hay mención de "tasas de error" o "rechazo" de la hipótesis. Se pensaba como una herramienta probatoria para usar de manera flexible dentro del contexto del problema estudiado (@goodman_dirty_2008).
 
-Distill is a publication format for scientific and technical writing, native to the web.
+>"*Personally, the writer prefers to set a low standart of significance at the 5 percent point... A scientific fact should be regarded as experimentally established only if a properly designed experiment rarely fails to give this level of significance*" 
+*Fisher (1926) in @goodman_dirty_2008*
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+De cierta manera, el significado operacional de un valor-p menor a 0.05 da evidencia para *repetir el experimento*. Si estudios posteriores también daban un valor-p similar, se podía concluir que los efectos observados *raramente* podían ser asociados a la suerte. De esa manera, cuando hablamos de un valor-p "significativo" hablamos de un valor al que hay que poner atención, pero que requiere de más estudios (@goodman_dirty_2008). Aun así, cuando se trata de interpretar el valor-p más allá de decir simplemente que hay significancia o no hay significancia estadística, donde surgen los errores interpretativos (@held_p-values_2018).
 
+La definición de valor-p es la siguiente: *La probabilidad de obtener, por azar, una diferencia tan grande o mayor de la observada, en el caso de que la hipótesis nula fuera cierta*. 
 

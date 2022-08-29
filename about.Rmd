@@ -1,6 +1,6 @@
 ---
-title: "Soledad Araya"
-image: "snaraya.JPG"
+title: "Soledad Araya Orrego"
+image: "IMG_0115.png"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/soledad-araya-0a651792/"
@@ -9,13 +9,45 @@ links:
   - label: Email
     url: "mailto:snaraya@uc.cl"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
 
-* Docente del Instituto de Ciencia Política UC.
-* Jefa de Proyectos en la Dirección de Estudios Sociales UC
-* Magíster en Cine Documental de la Universidad de Chile
-* Diploma en Estudios de Género de la Universidad de Chile
-* **R-Ladies**
+Estudiante de Cine Documental, en la etapa de desarrollo de mi obra de grado. Trabajo a tiempo completo en la **Dirección de Estudios Sociales UC**, donde me especializo en el área cuantitativa. Actualmente, soy docente en el Instituto de Ciencia Política UC donde imparto **Medición y análisis de datos multidimensionales** ICP5006. En la página principal puedes encontrar algunas publicaciones usadas en el curso, desde tutoriales para el uso de R a publicaciones teóricas. Soy asistente de investigación para múltiples profesores de la **Universidad Católica de Chile** y de **Pennsylvania State University**.
 
-Intereses: *Metodologías de la investigación, R, política local, partidos políticos.*
+## Educación
+
+---
+
+**Universidad de Chile** | Santiago, CL
+
+Magíster en Cine Documental, Facultad de Cine e Imagen | Abril 2021 - Diciembre 2022
+
+**Universidad de Chile** | Santiago, CL
+
+Diploma de Extensión en Estudios de Género, Facultas de Filosofía y Humanidades | Abril 2018 - Diciembre 2018
+
+**Universidad Católica de Chile** | Santiago, CL
+
+Ciencia Política, Instituto de Ciencia Política | Marzo 2013 - Diciembre 2017
+
+## Experiencia profesional
+
+---
+
+Jefa de Proyectos - Dirección de Estudios Sociales UC **DESUC** | Agosto 2020 - Presente
+
+Analista de Datos - Entrelíneas | Agosto 2019 - Abril 2020
+
+---
+
+## Asistencias de Investigación
+
+## Docencia
+
+## Ayudante de Cátedra
+
+
+
+
+
+
