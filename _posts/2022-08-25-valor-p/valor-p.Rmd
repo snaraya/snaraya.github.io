@@ -14,16 +14,63 @@ bibliography: valor-p.bib
 output:
   distill::distill_article:
     self_contained: false
+editor_options: 
+  chunk_output_type: console
 ---
+
+### Introducción
 
 Cuando trabajamos con modelos de regresión, usualmente usamos el **valor-p** o **valor crítico** para hablar de la significancia estadística de nuestra variable(s) independiente(s) sobre la variable dependiente. A pesar de ser un valor muy usado en la investigación, sobre todo en las ciencias sociales, suele ser poco cuestionado. "*Publish or perish*" es un aforismo utilizado en la academia para describir la presión de publicar para tener una carrera exitosa. Esta mentalidad --reforzada por las universidades-- no deja espacio para el cuestionamiento de este concepto que acepta o desacredita la hipótesis sostenida por los/as autores, y muchas veces es uno de los factores decisivos para ser publicados en revistas académicas. De esa manera, el valor-p no sólo tiene significancia estadística, sino que también tiene repercusión en la forma de hacer ciencia en las ciencias sociales. 
 
-El valor-p es difícil de interpretar correctamente. Incluso R.A. Fisher no pudo explicar exactamente su significado al momento de hacer inferencias estadísticas. Él propuso un sistema informal que *podía ser usado*, pero nunca pudo escribir de manera directa cuál era su valor desde el punto de vista inferencial. Para él, el valor-p era un guia numérica de la fuerza de la evidencia en contra de la hipótesis nula: no hay mención de "tasas de error" o "rechazo" de la hipótesis. Se pensaba como una herramienta probatoria para usar de manera flexible dentro del contexto del problema estudiado (@goodman_dirty_2008).
+El valor-p es difícil de interpretar correctamente. Incluso R.A. Fisher no pudo explicar exactamente su significado al momento de hacer inferencias estadísticas. Él propuso un sistema informal que *podía ser usado*, pero nunca pudo escribir de manera directa cuál era su valor desde el punto de vista inferencial. Para él, el valor-p era un guia numérica de la fuerza de la evidencia en contra de la hipótesis nula: no hay mención de "tasas de error" o "rechazo" de la hipótesis. Se pensaba como una herramienta probatoria para usar de manera flexible dentro del contexto del problema estudiado [@goodman_dirty_2008].
 
 >"*Personally, the writer prefers to set a low standart of significance at the 5 percent point... A scientific fact should be regarded as experimentally established only if a properly designed experiment rarely fails to give this level of significance*" 
 *Fisher (1926) in @goodman_dirty_2008*
 
-De cierta manera, el significado operacional de un valor-p menor a 0.05 da evidencia para *repetir el experimento*. Si estudios posteriores también daban un valor-p similar, se podía concluir que los efectos observados *raramente* podían ser asociados a la suerte. De esa manera, cuando hablamos de un valor-p "significativo" hablamos de un valor al que hay que poner atención, pero que requiere de más estudios (@goodman_dirty_2008). Aun así, cuando se trata de interpretar el valor-p más allá de decir simplemente que hay significancia o no hay significancia estadística, donde surgen los errores interpretativos (@held_p-values_2018).
+De cierta manera, el significado operacional de un valor-p menor a 0.05 es que nos entrega evidencia para *repetir el experimento*. Si estudios posteriores también dan un valor-p similar, se podía concluir que los efectos observados *raramente* podían ser asociados a la suerte. De esa manera, cuando hablamos de un valor-p "significativo" hablamos de un valor al que hay que poner atención, el cual requiere de más estudios [@goodman_dirty_2008]. Aun así, cuando se trata de interpretar el valor-p más allá de decir simplemente que hay significancia o no hay significancia estadística, donde surgen los errores interpretativos [@held_p-values_2018].
 
-La definición de valor-p es la siguiente: *La probabilidad de obtener, por azar, una diferencia tan grande o mayor de la observada, en el caso de que la hipótesis nula fuera cierta*. 
+La definición de valor-p es la siguiente: **La probabilidad de obtener un efecto por lo menos tan extremo como el de los datos de la muestra**. En términos lógicos, el valor-p evalúa todos los supuestos del modelo, no sólo la hipótesis. La definición general del valor-p nos puede ayudar a entender por qué los tests estadísticos nos dien mucho menos de lo que pensamos: el valor-p no sólo no nos dice si nuestra hipótesis es verdadera o no, no dice nada sobre la hipótesis al menos que estemos completamente seguros de que los supuestos se cumplen. Esto último es lo que falla en muchos de los estudios actuales. 
 
+**Pero, ¿qué significa el valor-p?**
+
+En el texto de @greenland_statistical_2016 es posible encontrar no sólo las interpretaciones erróneas del valor-p y de los intervalos de confianza. En la siguiente sección, encontrarán las doce interpretaciones erróneas del valor-p de @goodman_dirty_2008.
+
+---
+
+### *A Dirty Dozen: Twelve P-Value Misconceptions* por Steven Goodman.
+
+```{r echo=F}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+readxl::read_excel("tablas/tablas.xlsx") %>% 
+  knitr::kable(., align = 'rl') %>% 
+  kable_styling(bootstrap_options = c("striped"), html_font = 'Roboto Condensed') %>% 
+  column_spec(1, width_min = "1cm", bold = T) %>% 
+  column_spec(2, width_min = "6cm", border_left = T)
+```
+
+---
+
+### Los cuestionamientos al *valor-p* 
+
+Ya conocemos la definición de valor-p y sus problemas interpretativos. Para leer el valor-p y otorgarle significancia estadística, se han propuesto diferentes categorizaciones. Por ejemplo, **Cox y Donnelly** (2011, p.147) proponen la siguiente guía:
+
+| Resultado   |      Evidencia (en contra de $H_{0}$)     | 
+|----------|:-------------:|
+| $p \simeq 0.1$ | Sugerente |
+| $p \simeq 0.05$ | Modesta|
+| $p \simeq 0.01$ | Fuerte |
+    
+Este tipo de categorizaciones son comunes dentro de la estadística, pero cada categorización tiene un *nivel de arbitrariedad*. Además, este valor es una medida de evidencia indirecta: el valor-p está calculado bajo la suposición de que la $H_{0}$ es verdadera, por lo tanto, es condicional a $H_{0}$. Así, este dato no nos permite obtener conclusiones sobre la probabilidad de $H_{0}$ de acuerdo a nuestros datos, que suele ser el interés principal. Cox (2006, p.83) lo dice más claramente: "*conclusiones expresadas en términos de probabilidad suelen ser más poderosas que aquellas expresadas ndirectamente usando intervalos de confianza y valores-p*". Una conclusión directa podría obtenerse usando factors Bayesianos [@held_p-values_2018].
+
+Asumiento que $H_{1}$ también ha sido especificada, el factor Bayes cuantifica directamente si los datos aumentan o disminuyen los *odds* de $H_{0}$ [@held_p-values_2018]. Esta es sólo una de las posibles respuestas ante los problemas interpretativos del valor-p: entregar un dato más directo que nos de la información que buscamos. Aún así, no hay un consenso científico al respecto, y **el valor-p sigue siendo la forma principal de ver si los modelos propuestos tienen significancia estadística o no**. Pero al entregar una respuesta más certera estadísticamente, es más riesgosa.
+
+Esto último es una discusión que se ha ido desarrollando en la *Asociación Americana de Estadística*. En el 2016, Donald A. Berry realizó un comentario aludiendo a la responsabilidad del área estadística en la importancia que ha tomado el valor-p en la investigación empírica, y el poco esfuerzo que se ha tenido al momento de criticar su uso.
+
+>"*Recent attacks on p-values and the role of statistical significance in the "crisis of irreproducibility" has highlighted our lack of understanding. Our collective credibility in the sciences community is at risk. We cannot excuse ourselves by blaming non-staticians for their failure to understand or heed what we tell them. The fault for widespread ignorance about statistical significance and the misuses by substantive scietists of measures we promulgate is ours alone. We must communicate better even if we have to scream from the rooftops*" - @berry_p-values_nodate.
+
+Finalmente, malinterpretar el valor-p puede tener consecuencias en el mundo real. Por perseguir las estrellas (***) al lado de los coeficientes de regresión, los investigadores torturan los datos hasta obtener los resultados deseados, pero con conclusiones irreproducibles. De esta manera, cada una de las áreas de investigación se ha visto afectada por este tipo de prácticas, desde la medicina a las ciencias sociales, afectando a las personas. Pero no sólo eso, sino que también afecta cómo el público ve y acredita las ciencias.
+
+Cuando no sabemos exactamente qué nos están diciendo los datos, tenemos que recurrir a las advertencias: **Este estudio es exploratorio y sus resultados no son generalizables. Cálculos estadísticos como el valor-p y los intervalos de confianza son descriptivos y no tienen valor inferencial**.
