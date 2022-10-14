@@ -20,6 +20,18 @@
       <media:content url="https://snaraya.github.io/posts/2022-08-25-valor-p/images/preview.png" medium="image" type="image/png" width="1392" height="832"/>
     </item>
     <item>
+      <title>Unir bases de datos en R</title>
+      <dc:creator>Soledad Araya</dc:creator>
+      <link>https://snaraya.github.io/posts/2022-10-07-unir-bases-de-datos</link>
+      <description>Unir bases de datos en R es un tema. Para eso, tenemos diferentes herramientas que nos ayudan con este problema. Aquí, revisaremos algunos de ellos.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>tidyverse</category>
+      <guid>https://snaraya.github.io/posts/2022-10-07-unir-bases-de-datos</guid>
+      <pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://snaraya.github.io/posts/2022-10-07-unir-bases-de-datos/unir-bases-de-datos_files/figure-html5/unnamed-chunk-13-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Test de hipótesis</title>
       <dc:creator>Soledad Araya</dc:creator>
       <link>https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis</link>
