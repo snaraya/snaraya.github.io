@@ -1,0 +1,24 @@
+---
+title: "Cómo crear un nuevo post con distill"
+description: |
+  Crear un post nuevo en tu blog puede ser un trabajo enredado si no tienes claro los pasos a seguir. En este tutorial, pretendo darte los pasos lo más claro posible de cómo subir tu nuevo post al blog creado con anterioridad.
+author:
+  - name: Soledad Araya
+    url: https://snaraya.github.io
+date: 2022-08-25
+preview: images/preview.png
+categories:
+  - Tutoriales
+  - ICP5006
+  - distill
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+Insertamos el texto:
+
+¿Cuáles son los pasos a seguir?
+

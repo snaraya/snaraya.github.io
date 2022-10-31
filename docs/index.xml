@@ -32,6 +32,17 @@
       <media:content url="https://snaraya.github.io/posts/2022-10-07-unir-bases-de-datos/unir-bases-de-datos_files/figure-html5/unnamed-chunk-13-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
+      <title>Cómo crear un nuevo post con distill</title>
+      <dc:creator>Soledad Araya</dc:creator>
+      <link>https://snaraya.github.io/posts/2022-10-31-cmo-crear-un-nuevo-post</link>
+      <description>Crear un post nuevo en tu blog puede ser un trabajo enredado si no tienes claro los pasos a seguir. En este tutorial, pretendo darte los pasos lo más claro posible de cómo subir tu nuevo post al blog creado con anterioridad.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>distill</category>
+      <guid>https://snaraya.github.io/posts/2022-10-31-cmo-crear-un-nuevo-post</guid>
+      <pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Test de hipótesis</title>
       <dc:creator>Soledad Araya</dc:creator>
       <link>https://snaraya.github.io/posts/2022-08-22-test-de-hiptesis</link>

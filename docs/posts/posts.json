@@ -45,6 +45,27 @@
     "preview_height": 768
   },
   {
+    "path": "posts/2022-10-31-cmo-crear-un-nuevo-post/",
+    "title": "Cómo crear un nuevo post con distill",
+    "description": "Crear un post nuevo en tu blog puede ser un trabajo enredado si no tienes claro los pasos a seguir. En este tutorial, pretendo darte los pasos lo más claro posible de cómo subir tu nuevo post al blog creado con anterioridad.",
+    "author": [
+      {
+        "name": "Soledad Araya",
+        "url": "https://snaraya.github.io"
+      }
+    ],
+    "date": "2022-08-25",
+    "categories": [
+      "Tutoriales",
+      "ICP5006",
+      "distill"
+    ],
+    "contents": "\nInsertamos el texto:\n¿Cuáles son los pasos a seguir?\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-31T00:16:38-03:00",
+    "input_file": "cmo-crear-un-nuevo-post.knit.md"
+  },
+  {
     "path": "posts/2022-08-22-test-de-hiptesis/",
     "title": "Test de hipótesis",
     "description": "En el siguiente post revisaremos: (a) Cómo hacer análisis e interpretación de test de hipótesis bivariado, (b) a hacer tablas con `knitr`, (c) a realizar gráficos univariados y bivariados y finalmente (d) revisaremos el calendario con las actividades de la primera parte del semestre.",
