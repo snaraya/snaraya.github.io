@@ -6,7 +6,6 @@ author:
   - name: Soledad Araya
     url: https://snaraya.github.io
 date: 2022-08-25
-preview: images/preview.png
 categories:
   - Tutoriales
   - ICP5006
@@ -18,7 +17,67 @@ editor_options:
   chunk_output_type: console
 ---
 
-Insertamos el texto:
+## distill::new_post("title")
 
-¿Cuáles son los pasos a seguir?
+Para este curso, resulta necesario saber los pasos para subir un post al blog que creamos hace algunas semanas. El proceso puede ser fácil si sabes cómo hacerlo, en el caso de no saberlo puede ser engorroso: son muchos pasos, y hay que **hacerlos en orden**.
+
+### Primero: crear un nuevo post
+
+Para crear un nuevo post, debemos entrar al proyecto que guarda nuestro blog. En él, encontramos los diferentes archivos que lo componen, como el archivo _site.yml, index.Rmd y las carpetas de _posts y docs. Este es nuestor punto de partida:
+
+![Página en blanco](images/inicio blog.png)
+
+Debemos insertar el siguiente código en la Consola: `ditill::new_post()` con un título descriptivo del contenido. Recuerden que el título debe ir entre un par de comillas como el ejemplo que verán a continuación:
+
+![Nueva publicación](images/new post-blog.png)
+Al realizar este paso, automáticamente se creará una nueva publicación. Además, automáticamente los dejará ubicados en la carpeta que contendrá la información de la publicación. En ella sólo encontrarán un archivo Rmd (R Markdown) en blanco:
+
+![R Markdown en blanco](images/new post-clean.png)
+Con esto, podemos empezar a generar nuestro nuevo post.
+
+### Contenido
+
+Si bien el contenido lo definen ustedes, sí es importante agregar cierta información para que la publicación corra bien como página. 
+
+![Descripción](images/new post-descripcion.png)
+Esta información normalmente la copio y pego de posts creados anteriormente. Al crear el blog, hay una publicación de ejemplo que pueden utilizar en este paso, simplemente deben cambiar la información como título y descripción. En este caso, puse la descripción que ven en el blog.
+
+Teniendo esto, podemos escribir el contenido:
+
+![Texto](images/new post-texto.png)
+Esto lo pueden ir modificando a su gusto, en las siguientes páginas pueden ver información que les será de utilidad:
+
+*
+*
+*
+*
+
+### Correr el post
+
+Ya terminamos de escribir, pero eso no es suficiente para que sea un página que se refleje en nuestro blog. Una de las cosas que debemos hacer ya con nuestro contenido listo, es "tejer" nuestra publicación. Eso se hace fácilmente apretando el botón `knit`:
+
+![Knit](images/knit.png)
+Esta parte, generará dos cosas:
+
+Primero, una visualización de la publicación en su blog:
+
+![Blog en el Viewer](images/blog cargado-view.png)
+
+Como también los siguientes archivos:
+
+![Archivos en la carpeta](images/blog cargado-files.png)
+
+>Excepto la carpeta llamada **images**, que la creé yo para almacenar todas las imágenes que están presentes en esta publicación.
+
+Si todo está ok, deben continuar al siguiente paso.
+
+### Subir el blog a GitHub
+
+Ahora, debemos abrir GitHub Desktop. En él, verán todos los cambios que hicieron en el proyecto que contiene el blog. Debería ser similar a esto:
+
+![GitHub Desktop con cambios](images/github commit.png)
+Como pueden observar, aparecen los cambios, los archivos creados y todo el contenido que generaron. Para subirlo, deben poner una descripción breve en la parte destacada. Al hacer click en `Commit to main`, la página quedará nuevamente en blanco (más que en blanco, como en la pantalla de inicio). Les saldrá un botón 
+
+![GitHub Desktop](images/github limpio.png)
+
 

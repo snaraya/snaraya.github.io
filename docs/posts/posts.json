@@ -60,9 +60,9 @@
       "ICP5006",
       "distill"
     ],
-    "contents": "\nInsertamos el texto:\n¿Cuáles son los pasos a seguir?\n\n\n\n",
+    "contents": "\ndistill::new_post(“title”)\nPara este curso, resulta necesario saber los pasos para subir un post al blog que creamos hace algunas semanas. El proceso puede ser fácil si sabes cómo hacerlo, en el caso de no saberlo puede ser engorroso: son muchos pasos, y hay que hacerlos en orden.\nPrimero: crear un nuevo post\nPara crear un nuevo post, debemos entrar al proyecto que guarda nuestro blog. En él, encontramos los diferentes archivos que lo componen, como el archivo _site.yml, index.Rmd y las carpetas de _posts y docs. Este es nuestor punto de partida:\nPágina en blancoDebemos insertar el siguiente código en la Consola: ditill::new_post() con un título descriptivo del contenido. Recuerden que el título debe ir entre un par de comillas como el ejemplo que verán a continuación:\nNueva publicación\n\n\n",
     "preview": {},
-    "last_modified": "2022-10-31T00:16:38-03:00",
+    "last_modified": "2022-10-31T00:55:35-03:00",
     "input_file": "cmo-crear-un-nuevo-post.knit.md"
   },
   {
