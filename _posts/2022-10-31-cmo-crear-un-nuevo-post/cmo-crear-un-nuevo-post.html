@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["cmo-crear-un-nuevo-post_files/anchor-4.2.2/anchor.min.js","cmo-crear-un-nuevo-post_files/bowser-1.9.3/bowser.min.js","cmo-crear-un-nuevo-post_files/distill-2.2.21/template.v2.js","cmo-crear-un-nuevo-post_files/header-attrs-2.16/header-attrs.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.min.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.min.map","cmo-crear-un-nuevo-post_files/popper-2.6.0/popper.min.js","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy-bundle.umd.min.js","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy-light-border.css","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy.css","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy.umd.min.js","cmo-crear-un-nuevo-post_files/webcomponents-2.0.0/webcomponents.js","images/blog cargado-files.png","images/blog cargado-view.png","images/carpetas.png","images/github commit.png","images/github limpio.png","images/inicio blog.png","images/new post-blog.png","images/new post-clean.png","images/new post-descripcion.png","images/new post-inicio.png","images/new post-texto.png","images/pagina actualizada.png"]}
+  {"type":"character","attributes":{},"value":["cmo-crear-un-nuevo-post_files/anchor-4.2.2/anchor.min.js","cmo-crear-un-nuevo-post_files/bowser-1.9.3/bowser.min.js","cmo-crear-un-nuevo-post_files/distill-2.2.21/template.v2.js","cmo-crear-un-nuevo-post_files/header-attrs-2.16/header-attrs.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.min.js","cmo-crear-un-nuevo-post_files/jquery-3.6.0/jquery-3.6.0.min.map","cmo-crear-un-nuevo-post_files/popper-2.6.0/popper.min.js","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy-bundle.umd.min.js","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy-light-border.css","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy.css","cmo-crear-un-nuevo-post_files/tippy-6.2.7/tippy.umd.min.js","cmo-crear-un-nuevo-post_files/webcomponents-2.0.0/webcomponents.js","images/blog cargado-files.png","images/blog cargado-view.png","images/carpetas.png","images/github commit.png","images/github limpio.png","images/gitignore contenido.png","images/gitignore.png","images/inicio blog.png","images/knit.png","images/new post-blog.png","images/new post-clean.png","images/new post-descripcion.png","images/new post-inicio.png","images/new post-texto.png","images/pagina actualizada.png","images/push origin.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1525,17 +1525,102 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="distillnew_posttitle">distill::new_post(“title”)</h2>
 <p>Para este curso, resulta necesario saber los pasos para subir un post al blog que creamos hace algunas semanas. El proceso puede ser fácil si sabes cómo hacerlo, en el caso de no saberlo puede ser engorroso: son muchos pasos, y hay que <strong>hacerlos en orden</strong>.</p>
 <h3 id="primero-crear-un-nuevo-post">Primero: crear un nuevo post</h3>
-<p>Para crear un nuevo post, debemos entrar al proyecto que guarda nuestro blog. En él, encontramos los diferentes archivos que lo componen, como el archivo _site.yml, index.Rmd y las carpetas de _posts y docs. Este es nuestor punto de partida:</p>
+<p>Para crear un nuevo post, debemos entrar al proyecto que guarda nuestro blog. En él, encontramos los diferentes archivos que lo componen, como el archivo <code>_site.yml</code>, index.Rmd y las carpetas de <code>_posts</code> y <code>docs</code>. Este es nuestor punto de partida:</p>
 <figure>
 <img src="images/inicio%20blog.png" alt="Página en blanco" />
 <figcaption aria-hidden="true">Página en blanco</figcaption>
 </figure>
 <p>Debemos insertar el siguiente código en la Consola: <code>ditill::new_post()</code> con un título descriptivo del contenido. Recuerden que el título debe ir entre un par de comillas como el ejemplo que verán a continuación:</p>
+<p><img src="images/new%20post-blog.png" alt="Nueva publicación" />
+Al realizar este paso, automáticamente se creará una nueva publicación. Además, automáticamente los dejará ubicados en la carpeta que contendrá la información de la publicación. En ella sólo encontrarán un archivo <code>.Rmd</code> (R Markdown) en blanco:</p>
+<p><img src="images/new%20post-clean.png" alt="R Markdown en blanco" />
+Con esto, podemos empezar a generar nuestro nuevo post.</p>
+<h3 id="contenido">Contenido</h3>
+<p>Si bien el contenido lo definen ustedes, sí es importante agregar cierta información para que la publicación corra bien como página.</p>
+<p><img src="images/new%20post-descripcion.png" alt="Descripción" />
+Esta información normalmente la copio y pego de posts creados anteriormente. Al crear el blog, hay una publicación de ejemplo que pueden utilizar en este paso, simplemente deben cambiar la información como título y descripción. En este caso, puse la descripción que ven en el blog.</p>
+<p>Pueden ver las distintas opciones en la siguiente <a href="https://rstudio.github.io/distill/website.html">página</a>, Si ponen atención, también verán una forma más eficiente de ignorar archivos para que no suban a GitHub. También existe el <a href="https://ymlthis.r-lib.org/reference/yml_distill_opts.html">paquete</a> <code>ymlthis</code> que les puede ser útil si entienden más el formato R que el anterior.</p>
+<p>Teniendo esto, podemos escribir el contenido:</p>
+<p><img src="images/new%20post-texto.png" alt="Texto" />
+Esto lo pueden ir modificando a su gusto, en las siguientes páginas pueden ver información que les será de utilidad:</p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown</a>.</li>
+<li><a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html">Fórmulas en R MArkdown</a>.</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html">Editar las opciones de los chunks</a>.</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/tables.html">Tablas en R Markdown</a>.</li>
+</ul>
+<p>Este último es un bookdown muy útil para ver distintos tipos de especificaciones en la creación de un archivo R Markdown como en el que estamos trabajando.</p>
+<blockquote>
+<p>Los <strong>chunks</strong> son las casillas que abrimos para escribir código.</p>
+</blockquote>
+<h3 id="correr-el-post">Correr el post</h3>
+<p>Ya terminamos de escribir, pero eso no es suficiente para que sea un página que se refleje en nuestro blog. Una de las cosas que debemos hacer ya con nuestro contenido listo, es “tejer” nuestra publicación. Eso se hace fácilmente apretando el botón <code>knit</code>:</p>
+<p><img src="images/knit.png" alt="Knit" />
+Esta parte, generará dos cosas:</p>
+<p>Primero, una visualización de la publicación en su blog:</p>
 <figure>
-<img src="images/new%20post-blog" alt="Nueva publicación" />
-<figcaption aria-hidden="true">Nueva publicación</figcaption>
+<img src="images/blog%20cargado-view.png" alt="Blog en el Viewer" />
+<figcaption aria-hidden="true">Blog en el Viewer</figcaption>
 </figure>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Como también los siguientes archivos:</p>
+<figure>
+<img src="images/blog%20cargado-files.png" alt="Archivos en la carpeta" />
+<figcaption aria-hidden="true">Archivos en la carpeta</figcaption>
+</figure>
+<blockquote>
+<p>Excepto la carpeta llamada <strong>images</strong>, que la creé yo para almacenar todas las imágenes que están presentes en esta publicación.</p>
+</blockquote>
+<p>Si todo está ok, deben continuar al siguiente paso.</p>
+<h2 id="subir-el-post-a-github">Subir el post a GitHub</h2>
+<h3 id="commit">Commit</h3>
+<p>Ahora, debemos abrir GitHub Desktop. En él, verán todos los cambios que hicieron en el proyecto que contiene el blog. Debería ser similar a esto:</p>
+<figure>
+<img src="images/github%20commit.png" alt="GitHub Desktop con cambios" />
+<figcaption aria-hidden="true">GitHub Desktop con cambios</figcaption>
+</figure>
+<h3 id="push">Push</h3>
+<p>Como pueden observar, aparecen los cambios, los archivos creados y todo el contenido que generaron. Para subirlo, deben poner una descripción breve en la parte destacada. Al hacer click en <code>Commit to main</code>, la página quedará nuevamente en blanco (más que en blanco, como en la pantalla de inicio). Les saldrá un botón <code>Push origin</code>, el cual subirá todos los cambios realizados a su carpeta web del proyecto en GitHub.</p>
+<p><img src="images/push%20origin.png" alt="Push" />
+Al hacer click en ese botón, y la página quedará como la que se ve a continuación:</p>
+<p><img src="images/github%20limpio.png" alt="GitHub Desktop" />
+Al finalizar este paso, su página quedará actualizada con los nuevos posts.</p>
+<h2 id="revisión">Revisión</h2>
+<p>La página no se carga automáticamente, deben esperar algunos minutos para revisar la carga en el blog. Dependiendo del tamaño del post, las imágenes, etc. se demorará más en subir. Deben revisar que esté todo ok, pueden hacer estos pasos múltiples veces hasta que queden satisfechos con el resultado.</p>
+<figure>
+<img src="images/pagina%20actualizada.png" alt="Blog" />
+<figcaption aria-hidden="true">Blog</figcaption>
+</figure>
+<h2 id="carpetas">Carpetas</h2>
+<p>Al crear un nuevo post, se crea una carpeta como les había mencionado. Esta carpeta se refleja en la carpeta de su proyecto y estará almacenada en la carpeta <code>_posts</code>. La mía se ve así después de realizar esta publicación:</p>
+<p><img src="images/carpetas.png" /></p>
+<p>En la carpeta hay una carpeta que contiene la información del blog después de correrlo con <code>knit</code>, un archivo <code>html</code> y en este caso, todas las imágenes utilizadas en este post.</p>
+<h2 id="gitignore">.gitignore</h2>
+<p>Al trabajar con bases de datos, estas también pueden quedar almacenadas en nuestro proyecto. Pero no siempre es posible subirlas, especialmente cuando éstas son <strong>muy pesadas</strong>. Pueden indicarle a Git que no suba esta información en <code>.gitignore</code>:</p>
+<figure>
+<img src="images/gitignore.png" alt=".gitignore" />
+<figcaption aria-hidden="true">.gitignore</figcaption>
+</figure>
+<p>El mio se ve de la siguiente manera:</p>
+<figure>
+<img src="images/gitignore%20contenido.png" alt="Contenido .gitignore" />
+<figcaption aria-hidden="true">Contenido .gitignore</figcaption>
+</figure>
+<blockquote>
+<p>El mio está horrible.</p>
+</blockquote>
+<p>Yo ignoré algunas bases de datos y pdfs que no era necesario cargar a mi blog. Saqué información de este <a href="https://superuser.com/questions/1431796/difference-between-pdf-and-pdf-in-gitignore">foro</a> para que `puedan manejar .gitignore con mayor comodidad:</p>
+<ul>
+<li><code>.pdf</code> ignora <code>.pdf</code> y <code>pdf/.pdf</code></li>
+<li><code>*.pdf</code> ignora <strong>todos</strong> los archivos con la extensión <code>.pdf</code></li>
+<li><code>**/*pdf</code> realiza la misma función que el de arriba</li>
+<li><code>abc.pdf</code> ignora <code>abc.pdf</code>, <code>pdf/abc.pdf</code> y <code>d/pdf/abc.pdf</code></li>
+<li><code>pdf/abc.pdf</code> ignora <code>pdf/abc.pdf</code>, <strong>pero no</strong> <code>d/pdf/abc.pdf</code></li>
+<li><code># *.pdf</code> es un comentario dentro del archivo</li>
+</ul>
+<p>Para ignorar todos los archivos <code>*.pdf</code>, pero no <code>abd.pdf</code>, <code>pdf/abc.pdf</code> y <code>d/pdf/abc.pdf</code>:</p>
+<pre><code>*.pdf
+!abc.pdf</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
