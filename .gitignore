@@ -17,3 +17,7 @@ _posts/2022-08-25-valor-p/bibliography/Greenland et all.pdf
 _posts/2022-08-25-valor-p/bibliography/Steven Goodman.pdf
 _posts/2022-08-25-valor-p/bibliography/DA Berry.pdf
 *.pdf
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto

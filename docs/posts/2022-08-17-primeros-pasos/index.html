@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -128,7 +128,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/Estadistica por rango etario año 2016.xlsx","images/imagen1.png","images/imagen2.png","images/preview.png","input/tablas.xlsx","primeros-pasos_files/anchor-4.2.2/anchor.min.js","primeros-pasos_files/bowser-1.9.3/bowser.min.js","primeros-pasos_files/distill-2.2.21/template.v2.js","primeros-pasos_files/figure-html5/unnamed-chunk-11-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-12-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-13-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-14-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-15-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-17-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-18-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-19-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-20-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-21-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-22-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-9-1.png","primeros-pasos_files/header-attrs-2.15/header-attrs.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.min.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.min.map","primeros-pasos_files/kePrint-0.0.1/kePrint.js","primeros-pasos_files/lightable-0.0.1/lightable.css","primeros-pasos_files/popper-2.6.0/popper.min.js","primeros-pasos_files/tippy-6.2.7/tippy-bundle.umd.min.js","primeros-pasos_files/tippy-6.2.7/tippy-light-border.css","primeros-pasos_files/tippy-6.2.7/tippy.css","primeros-pasos_files/tippy-6.2.7/tippy.umd.min.js","primeros-pasos_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/Estadistica por rango etario año 2016.xlsx","images/imagen1.png","images/imagen2.png","images/preview.png","input/tablas.xlsx","primeros-pasos_files/anchor-4.2.2/anchor.min.js","primeros-pasos_files/bowser-1.9.3/bowser.min.js","primeros-pasos_files/distill-2.2.21/template.v2.js","primeros-pasos_files/figure-html5/unnamed-chunk-11-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-12-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-13-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-14-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-15-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-17-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-18-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-19-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-20-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-21-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-22-1.png","primeros-pasos_files/figure-html5/unnamed-chunk-9-1.png","primeros-pasos_files/header-attrs-2.15/header-attrs.js","primeros-pasos_files/header-attrs-2.16/header-attrs.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.min.js","primeros-pasos_files/jquery-3.6.0/jquery-3.6.0.min.map","primeros-pasos_files/kePrint-0.0.1/kePrint.js","primeros-pasos_files/lightable-0.0.1/lightable.css","primeros-pasos_files/popper-2.6.0/popper.min.js","primeros-pasos_files/tippy-6.2.7/tippy-bundle.umd.min.js","primeros-pasos_files/tippy-6.2.7/tippy-light-border.css","primeros-pasos_files/tippy-6.2.7/tippy.css","primeros-pasos_files/tippy-6.2.7/tippy.umd.min.js","primeros-pasos_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -475,8 +475,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -805,6 +805,7 @@ d-title .dt-tags {
 d-article table.gt_table td,
 d-article table.gt_table th {
   border-bottom: none;
+  font-size: 100%;
 }
 
 .html-widget {
@@ -845,9 +846,21 @@ d-article table.gt_table th {
   display: none !important;
 }
 
+hr.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px;
+}
+
+
+d-byline {
+  border-top: none;
+}
+
 d-article {
   padding-top: 2.5rem;
   padding-bottom: 30px;
+  border-top: none;
 }
 
 d-appendix {
@@ -942,6 +955,11 @@ d-article div.sourceCode pre {
 d-article div.sourceCode pre {
   padding-left: 18px;
   font-size: 14px;
+}
+
+/* tweak for Pandoc numbered line within distill */
+d-article pre.numberSource code > span {
+    left: -2em;
 }
 
 d-article pre {
@@ -1703,6 +1721,12 @@ function init_distill() {
   // create d-title
   $('.d-title').changeElementType('d-title');
 
+  // separator
+  var separator = '<hr class="section-separator" style="clear: both"/>';
+  // prepend separator above appendix
+  $('.d-byline').before(separator);
+  $('.d-article').before(separator);
+
   // create d-byline
   var byline = $('<d-byline></d-byline>');
   $('.d-byline').replaceWith(byline);
@@ -1780,8 +1804,9 @@ function init_distill() {
   $('.distill-force-highlighting-css').parent().remove();
 
   // remove empty line numbers inserted by pandoc when using a
-  // custom syntax highlighting theme
-  $('code.sourceCode a:empty').remove();
+  // custom syntax highlighting theme, except when numbering line
+  // in code chunk
+  $('pre:not(.numberLines) code.sourceCode a:empty').remove();
 
   // load distill framework
   load_distill_framework();
@@ -1807,12 +1832,13 @@ function init_distill() {
     // add orcid ids
     $('.authors-affiliations').find('.author').each(function(i, el) {
       var orcid_id = front_matter.authors[i].orcidID;
+      var author_name = front_matter.authors[i].author
       if (orcid_id) {
         var a = $('<a></a>');
         a.attr('href', 'https://orcid.org/' + orcid_id);
         var img = $('<img></img>');
         img.addClass('orcid-id');
-        img.attr('alt', 'ORCID ID');
+        img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
         img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
         a.append(img);
         $(this).append(a);
@@ -1890,7 +1916,8 @@ function init_distill() {
       }
       var refs = $(this).attr('data-cites').split(" ");
       var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
       }).join("\n");
       window.tippy(this, {
         allowHTML: true,
@@ -2401,9 +2428,11 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.16/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
   <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <link href="../../site_libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+  <script src="../../site_libs/bsTable-3.3.7/bootstrapTable.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2460,6 +2489,7 @@ Tutoriales
 
 <div class="d-title">
 <h1>Primeros pasos con tidyverse y ggplot2</h1>
+
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
   <a href="../../index.html#category:Tutoriales" class="dt-tag">Tutoriales</a>
@@ -2609,7 +2639,7 @@ Añade un título a los gráficos.
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Si contiene los nombres de las columnas. En R existe el paquete janitor() que nos ayuda a limpiar los nombres de las columnas. Los nombres con caracteres especiales siempre dan problemas.</span></span>
 <span></span>
 <span><span class='va'>df_militantes</span> <span class='op'>&lt;-</span> <span class='va'>df_militantes</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span>  <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://sfirke.github.io/janitor/reference/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
@@ -2839,791 +2869,339 @@ $ total   &lt;dbl&gt; 132, 86, 34, 24, 14, 10, 26, 33, 502, 497, 36, 35, 4…</c
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>skimr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/skimr/reference/skim.html'>skim</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
-<table style="width: auto;" class="table table-condensed">
-<caption>
-<span id="tab:unnamed-chunk-4">Table 1: </span>Data summary
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-</tr>
-</thead>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Data summary</caption>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Name
-</td>
-<td style="text-align:left;">
-df_militantes
-</td>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">df_militantes</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Number of rows
-</td>
-<td style="text-align:left;">
-10930
-</td>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">10930</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Number of columns
-</td>
-<td style="text-align:left;">
-19
-</td>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">19</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-_______________________
-</td>
-<td style="text-align:left;">
-</td>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Column type frequency:
-</td>
-<td style="text-align:left;">
-</td>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
 </tr>
-<tr>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-4
-</td>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">4</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-15
-</td>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">15</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-________________________
-</td>
-<td style="text-align:left;">
-</td>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Group variables
-</td>
-<td style="text-align:left;">
-None
-</td>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Variable type: character</strong></p>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 19%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:right;">
-min
-</th>
-<th style="text-align:right;">
-max
-</th>
-<th style="text-align:right;">
-empty
-</th>
-<th style="text-align:right;">
-n_unique
-</th>
-<th style="text-align:right;">
-whitespace
-</th>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-partido
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-0
-</td>
+<tr class="odd">
+<td style="text-align: left;">partido</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-region
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-0
-</td>
+<tr class="even">
+<td style="text-align: left;">region</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-comuna
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-346
-</td>
-<td style="text-align:right;">
-0
-</td>
+<tr class="odd">
+<td style="text-align: left;">comuna</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">346</td>
+<td style="text-align: right;">0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-sexo
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0
-</td>
+<tr class="even">
+<td style="text-align: left;">sexo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
 <table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 12%" />
+<col style="width: 18%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 3%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:right;">
-mean
-</th>
-<th style="text-align:right;">
-sd
-</th>
-<th style="text-align:right;">
-p0
-</th>
-<th style="text-align:right;">
-p25
-</th>
-<th style="text-align:right;">
-p50
-</th>
-<th style="text-align:right;">
-p75
-</th>
-<th style="text-align:right;">
-p100
-</th>
-<th style="text-align:left;">
-hist
-</th>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-x18_19
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0.79
-</td>
-<td style="text-align:right;">
-7.87
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-569
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x18_19</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">7.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">569</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x20_24
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4.32
-</td>
-<td style="text-align:right;">
-17.80
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-658
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x20_24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.32</td>
+<td style="text-align: right;">17.80</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">658</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x25_29
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4.70
-</td>
-<td style="text-align:right;">
-15.91
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-344
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x25_29</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">15.91</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">344</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x30_34
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4.08
-</td>
-<td style="text-align:right;">
-11.95
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-251
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x30_34</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">11.95</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">251</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x35_39
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4.15
-</td>
-<td style="text-align:right;">
-10.08
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-206
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x35_39</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.15</td>
+<td style="text-align: right;">10.08</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">206</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x40_44
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5.85
-</td>
-<td style="text-align:right;">
-13.53
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-290
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x40_44</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.85</td>
+<td style="text-align: right;">13.53</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">290</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x45_49
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-10.92
-</td>
-<td style="text-align:right;">
-25.36
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-494
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x45_49</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10.92</td>
+<td style="text-align: right;">25.36</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">494</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x50_54
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-12.87
-</td>
-<td style="text-align:right;">
-31.01
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-550
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x50_54</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12.87</td>
+<td style="text-align: right;">31.01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">550</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x55_59
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-10.74
-</td>
-<td style="text-align:right;">
-24.81
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-569
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x55_59</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10.74</td>
+<td style="text-align: right;">24.81</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">569</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x60_64
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-8.52
-</td>
-<td style="text-align:right;">
-19.55
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-417
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x60_64</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8.52</td>
+<td style="text-align: right;">19.55</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">417</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x65_69
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-6.69
-</td>
-<td style="text-align:right;">
-15.65
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-281
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x65_69</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6.69</td>
+<td style="text-align: right;">15.65</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">281</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x70_74
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5.24
-</td>
-<td style="text-align:right;">
-12.71
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-232
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x70_74</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.24</td>
+<td style="text-align: right;">12.71</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">232</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x75_79
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-9.17
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-136
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">x75_79</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.65</td>
+<td style="text-align: right;">9.17</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-x80
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4.59
-</td>
-<td style="text-align:right;">
-12.72
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-224
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="even">
+<td style="text-align: left;">x80</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.59</td>
+<td style="text-align: right;">12.72</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">224</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-total
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-87.10
-</td>
-<td style="text-align:right;">
-182.34
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-79
-</td>
-<td style="text-align:right;">
-3096
-</td>
-<td style="text-align:left;">
-▇▁▁▁▁
-</td>
+<tr class="odd">
+<td style="text-align: left;">total</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">87.10</td>
+<td style="text-align: right;">182.34</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">79</td>
+<td style="text-align: right;">3096</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
 </tbody>
 </table>
@@ -3631,7 +3209,7 @@ total
 <p>Finalmente, podemos usar una función que creará un documento-reporte html con información básica de las variables como estructura, estadísticas, missings, visualizaciones sobre la distribución. Es la función <code>create_report()</code> del paquete <code>DataExplorer</code>. Se demorará unos segundos en hacer el reporte.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>DataExplorer</span><span class='fu'>::</span><span class='fu'><a href='http://boxuancui.github.io/DataExplorer/reference/create_report.html'>create_report</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>DataExplorer</span><span class='fu'>::</span><span class='fu'>create_report</span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <p>Como podemos observar ¡incluso nos entrega información de los componentes principales!</p>
@@ -3653,15 +3231,14 @@ total
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code># A tibble: 6 × 7
-  partido             region      comuna     sexo  total edad  milit…¹
-  &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
-1 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x18_…       0
-2 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x20_…       0
-3 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x25_…       1
-4 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x30_…       0
-5 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x35_…       1
-6 RENOVACION NACIONAL DE TARAPACA ALTO HOSP… M       132 x40_…       6
-# … with abbreviated variable name ¹​militantes</code></pre>
+  partido             region      comuna  sexo  total edad  militantes
+  &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+1 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x18_…          0
+2 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x20_…          0
+3 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x25_…          1
+4 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x30_…          0
+5 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x35_…          1
+6 RENOVACION NACIONAL DE TARAPACA ALTO H… M       132 x40_…          6</code></pre>
 </div>
 <p>La función <code>pivot_longer</code> necesita que definamos las variables que hay que poner en formato “long”. En este caso, todas las variables relacionadas con el ranto etario empezaban con “x”, por lo que usamos <code>start_with()</code> para seleccionarlas. Luego, nombramos la variable que contendrá los nombres de las columnas, y luego el nombre de la variable que tendrá los valores de las columnas.</p>
 <p>Ahora, revisemos la base de datos con <code>summary()</code>:</p>
@@ -3687,7 +3264,7 @@ total
  Min.   :  0.000  
  1st Qu.:  0.000  
  Median :  1.000  
- Mean   :  6.221  
+ Mean   :  6.222  
  3rd Qu.:  4.000  
  Max.   :658.000  </code></pre>
 </div>
@@ -3938,15 +3515,14 @@ ggplot(…) %&gt;% facet_wrap(facets = vars(sexo))
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code># A tibble: 6 × 8
-  partido             region  comuna sexo  total edad  milit…¹ rango…²
-  &lt;chr&gt;               &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;  
-1 RENOVACION NACIONAL DE TAR… ALTO … M       132 x18_…       0 18_19  
-2 RENOVACION NACIONAL DE TAR… ALTO … M       132 x20_…       0 20_24  
-3 RENOVACION NACIONAL DE TAR… ALTO … M       132 x25_…       1 25_29  
-4 RENOVACION NACIONAL DE TAR… ALTO … M       132 x30_…       0 30_34  
-5 RENOVACION NACIONAL DE TAR… ALTO … M       132 x35_…       1 35_39  
-6 RENOVACION NACIONAL DE TAR… ALTO … M       132 x40_…       6 40_44  
-# … with abbreviated variable names ¹​militantes, ²​rangos_etarios</code></pre>
+  partido    region comuna sexo  total edad  militantes rangos_etarios
+  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;         
+1 RENOVACIO… DE TA… ALTO … M       132 x18_…          0 18_19         
+2 RENOVACIO… DE TA… ALTO … M       132 x20_…          0 20_24         
+3 RENOVACIO… DE TA… ALTO … M       132 x25_…          1 25_29         
+4 RENOVACIO… DE TA… ALTO … M       132 x30_…          0 30_34         
+5 RENOVACIO… DE TA… ALTO … M       132 x35_…          1 35_39         
+6 RENOVACIO… DE TA… ALTO … M       132 x40_…          6 40_44         </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Ya eliminamos la x, ahora podemos cambiar el guión bajo por un guión:</span></span>
 <span></span>
@@ -3957,15 +3533,14 @@ ggplot(…) %&gt;% facet_wrap(facets = vars(sexo))
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_militantes</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code># A tibble: 6 × 8
-  partido             region  comuna sexo  total edad  milit…¹ rango…²
-  &lt;chr&gt;               &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;  
-1 RENOVACION NACIONAL DE TAR… ALTO … M       132 x18_…       0 18-19  
-2 RENOVACION NACIONAL DE TAR… ALTO … M       132 x20_…       0 20-24  
-3 RENOVACION NACIONAL DE TAR… ALTO … M       132 x25_…       1 25-29  
-4 RENOVACION NACIONAL DE TAR… ALTO … M       132 x30_…       0 30-34  
-5 RENOVACION NACIONAL DE TAR… ALTO … M       132 x35_…       1 35-39  
-6 RENOVACION NACIONAL DE TAR… ALTO … M       132 x40_…       6 40-44  
-# … with abbreviated variable names ¹​militantes, ²​rangos_etarios</code></pre>
+  partido    region comuna sexo  total edad  militantes rangos_etarios
+  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;         
+1 RENOVACIO… DE TA… ALTO … M       132 x18_…          0 18-19         
+2 RENOVACIO… DE TA… ALTO … M       132 x20_…          0 20-24         
+3 RENOVACIO… DE TA… ALTO … M       132 x25_…          1 25-29         
+4 RENOVACIO… DE TA… ALTO … M       132 x30_…          0 30-34         
+5 RENOVACIO… DE TA… ALTO … M       132 x35_…          1 35-39         
+6 RENOVACIO… DE TA… ALTO … M       132 x40_…          6 40-44         </code></pre>
 </div>
 <p>Volvemos al gráfico:</p>
 <div class="layout-chunk" data-layout="l-body">

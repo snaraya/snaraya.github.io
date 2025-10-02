@@ -1,6 +1,6 @@
 ---
 title: "Soledad Araya Orrego"
-image: "IMG_0115.png"
+image: "perfil.png"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/soledad-araya-0a651792/"
@@ -12,42 +12,87 @@ output:
   postcards::trestles
 ---
 
-Estudiante de Cine Documental, en la etapa de desarrollo de mi obra de grado. Trabajo a tiempo completo en la **Dirección de Estudios Sociales UC**, donde me especializo en el área cuantitativa. Actualmente, soy docente en el Instituto de Ciencia Política UC donde imparto **Medición y análisis de datos multidimensionales** ICP5006. En la página principal puedes encontrar algunas publicaciones usadas en el curso, desde tutoriales para el uso de R a publicaciones teóricas. Soy asistente de investigación para múltiples profesores de la **Universidad Católica de Chile** y de **Pennsylvania State University**.
+Trabajé a tiempo completo en la **Dirección de Estudios Sociales UC** desde el 2020 a 2025, donde me especiolicé en el área cuantitativa.
+
+Actualmente, soy docente en el Instituto de Ciencia Política UC donde imparto **Medición y análisis de datos multidimensionales** ICP5006 y **Fundamentos metodológicos** ICP5008. En la página principal puedes encontrar algunas publicaciones usadas en el curso, desde tutoriales para el uso de R a publicaciones teóricas.
+
+Actualmente soy Campeona en el Programa de Campeones de [rOpenSci](https://ropensci.org/es/blog/2025/07/03/champions-2025) desarrollando mi primer paquete **votosCL** que contendrá la información de los resultados electorales de Chile.
+
+Soy asistente de investigación para múltiples profesores de la **Universidad Católica de Chile** y de **Pennsylvania State University**.
 
 ## Educación
 
----
+------------------------------------------------------------------------
 
-**Universidad de Chile** | Santiago, CL
+**Universidad de Chile** \| Santiago, CL
 
-Magíster en Cine Documental, Facultad de Cine e Imagen | Abril 2021 - Diciembre 2022
+* Magíster en Cine Documental, Facultad de Cine e Imagen \| Abril 2021 - Diciembre 2022
 
-**Universidad de Chile** | Santiago, CL
+**Universidad de Chile** \| Santiago, CL
 
-Diploma de Extensión en Estudios de Género, Facultas de Filosofía y Humanidades | Abril 2018 - Diciembre 2018
+* Diploma de Extensión en Estudios de Género, Facultas de Filosofía y Humanidades \| Abril 2018 - Diciembre 2018
 
-**Universidad Católica de Chile** | Santiago, CL
+**Universidad Católica de Chile** \| Santiago, CL
 
-Ciencia Política, Instituto de Ciencia Política | Marzo 2013 - Diciembre 2017
+* Ciencia Política, Instituto de Ciencia Política \| Marzo 2013 - Diciembre 2017
 
 ## Experiencia profesional
 
----
+------------------------------------------------------------------------
 
-Jefa de Proyectos - Dirección de Estudios Sociales UC **DESUC** | Agosto 2020 - Presente
+**Jefa de Proyectos** - Dirección de Estudios Sociales UC **DESUC** \| Agosto 2022 - Agosto 2025
 
-Analista de Datos - Entrelíneas | Agosto 2019 - Abril 2020
+-   Encuesta Nacional de Juventudes ENJUV, Instituto Nacional de la Juventud \| 2025.
+-   Encuesta Nacional de Calidad de Vida y Salud ENCAVI, Ministerio de Salud \| 2023-2024
+-   Servicios de aplicación del Índice de Percepción Comunitaria, Corporación Nacional del Cobre CODELCO \| 2020-2024
+-   Intergración social y territorial de Proyectos DS.19, Ministerio de Vivienda y Urbanismo y Centro de Políticas Públicas UC \| 2021
 
----
+**Analista de datos cuantitativos** - Dirección de Estudios Sociales UC **DESUC** \| Agosto 2020 - Agosto 2022
 
-## Asistencias de Investigación
+-   Encuesta Nacional de Salud, Sexualidad y Género ENSSEX, Ministerio de Salud \| 2022
+-   Encuesta Nacional de Televisión ENTV, Consejo Nacional de Televisión \| 2021
+
+**Analista de datos** - Entrelíneas \| Agosto 2019 - Abril 2020
+
+- Estudios de mercado para Cencosud, tienda Johnson.
+- Estudio cualitativo para Cencosud, tienda Paris.
+
 
 ## Docencia
 
-## Ayudante de Cátedra
+------------------------------------------------------------------------
 
 
+**Pontificia Universidad Católica de Chile**
+
+-   Fundamentos metodológicos del análisis político aplicado a la práctica profesional ICP5008 \| Primer semestre 2022-2025.
+
+-   Medición y análisis dimensional de datos políticos ICP5006 \| Segundo semestre 2022, 2025.
+
+## Asistencias de Investigación
+
+------------------------------------------------------------------------
 
 
+**Pennsylvania State University**
+
+-   Asistente de investigación, Prof. Giancarlo Visconti (2018 - Presente) Department of Political Science of Pennsylvania State University Data building and data analysis for projects published in journals such as Political Science Research Methods, Electoral Studies, and Governance.
+
+**Pontificia Universidad Católica de Chile**
+
+-   Asistente de investigación, Prof. Diego Díaz-Rioseco (2018 - Presente) Escuela de Gobierno FONDECYT Nº11190953, **Fiscal Origins of Democracy: How Different Sources of Nontax Income Affect Authoritarian Stability and Democratization**.
+
+-   Asistente de investigación, Prof. Carla Alberti (2020 - 2024) Instituto de Ciencia Política FONDECYT Nº11191136, **Becoming Parties: Indigenous Social Movements and Party Politics in Latin America**.
+
+-   Asistente de investigación, Prof. Carsten Schulz (2019) Instituto de Ciencia Política FONDECYT N° 11170185 **Commitment Evasion and Regional Cooperation in Latin America**.
+
+-   Asistente de investigación, Prof. Francisco Urdinez (2017 - 2019) Instituto de Ciencia Política VRI I1706/2017 FONDECYT Nº 11180081 **The International Politics of China’s Rising Role in Financing Infrastructure**.
+
+## Capítulos de libro
+
+------------------------------------------------------------------------
 
 
+-   Cruz, A., Araya, S. (2020). **Data Loading**. In F. Urdinez A. Cruz (Eds.), R for Political Data Science: A Practical Guide (1st Ed., pp. 71–86). Chapman and Hall/CRC. <https://doi.org/10.1201/9781003010623>
+
+-   Araya, S. (2020). **Data Visualization**. In F. Urdinez A. Cruz (Eds.), R for Political Data Science: A Practical Guide (1st ed., pp. 37–66). Chapman and Hall/CRC. <https://doi.org/10.1201/9781003010623>
