@@ -18,8 +18,8 @@ navbar:
     - text: "Tutoriales"
       menu:
         - text: "Páginas con Distill"
-          href: crear-con-distill.html
+          href: posts/2025-10-15-crear-con-distill
         - text: "Análisis de regresión"
-          href: el-poder-de-la-legitimidad.html
+          href: posts/2025-10-16-el-poder-de-la-legitimidad
 output: distill::distill_article
 bibliography: bibliography.yaml
