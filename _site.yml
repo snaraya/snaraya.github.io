@@ -18,10 +18,8 @@ navbar:
     - text: "Tutoriales"
       menu:
         - text: "Páginas con Distill"
-          href: crear-una-pgina-con-distill.html
-        - text: "Primeros pasos con R"
-          href: primeros-pasos.html
-        - text: "Gráficos con ggplot2"
-          href: test-de-hiptesis.html
+          href: crear-con-distill.html
+        - text: "Análisis de regresión"
+          href: el-poder-de-la-legitimidad.html
 output: distill::distill_article
 bibliography: bibliography.yaml

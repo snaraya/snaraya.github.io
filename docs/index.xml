@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Soledad Araya Orrego</title>
+    <link>https://snaraya.github.io</link>
+    <atom:link href="https://snaraya.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Soledad araya Orrego
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Análisis de regresión lineal: El poder de la legitimidad en las sanciones por derechos humanos</title>
+      <dc:creator>Soledad Araya</dc:creator>
+      <link>https://snaraya.github.io/posts/2025-10-16-el-poder-de-la-legitimidad</link>
+      <description>El análisis de regresión lineal simple y múltiple permite examinar la relación entre una variable dependiente y una o más variables independientes para explicar y predecir comportamientos o resultados. Utilizaremos el artículo de Ryan Yu-Lin Liou para replicar la metodología y las herramientas de R para hacer este tipo de análisis.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>tidyverse</category>
+      <guid>https://snaraya.github.io/posts/2025-10-16-el-poder-de-la-legitimidad</guid>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <media:content url="https://snaraya.github.io/posts/2025-10-16-el-poder-de-la-legitimidad/images/imagen_wt.jpeg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Cómo hacer una página estática con distill</title>
+      <dc:creator>Soledad Araya</dc:creator>
+      <link>https://snaraya.github.io/posts/2025-10-15-crear-con-distill</link>
+      <description>El desarrollo de páginas web estáticas, bookdowns o paquetes en R se ha masificado, especialmente cuando se trata de compartir herramientas en este software libre. Con ese motivo, revisaremos los primeros pasos para diseñar una página con el paquete `distill`.</description>
+      <category>Tutoriales</category>
+      <category>ICP5006</category>
+      <category>distill</category>
+      <guid>https://snaraya.github.io/posts/2025-10-15-crear-con-distill</guid>
+      <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://snaraya.github.io/posts/2025-10-15-crear-con-distill/images/imagen_wt.jpeg" medium="image" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>

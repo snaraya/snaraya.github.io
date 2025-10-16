@@ -1,0 +1,46 @@
+---
+title: "Análisis de regresión lineal: El poder de la legitimidad en las sanciones por derechos humanos"
+description: |
+  El análisis de regresión lineal simple y múltiple permite examinar la relación entre una variable dependiente y una o más variables independientes para explicar y predecir comportamientos o resultados. Utilizaremos el artículo de Ryan Yu-Lin Liou para replicar la metodología y las herramientas de R para hacer este tipo de análisis.
+author:
+  - name: Soledad Araya
+    url: https://snaraya.github.io
+preview: images/imagen_wt.jpeg
+categories:
+  - Tutoriales
+  - ICP5006
+  - tidyverse
+date: 10-15-2025
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+# Análisis de regresión lineal simple y múltiple
+
+## ¿Qué estudio analizaremos?
+
+El artículo "**Can International Advocacy Rally Public Support for Human Rights Sanctions? Experimental Evidence from the United States**" (Ryan Yu-Lin Liou, International Studies Quarterly, 2025) analiza cómo los mensajes internacionales sobre violaciones de derechos humanos influyen en el apoyo público a las sanciones en Estados Unidos.
+
+### Objetivo del estudio
+
+El trabajo investiga si, y bajo qué condiciones, la defensa internacional de los derechos humanos puede movilizar el apoyo ciudadano hacia sanciones contra regímenes represivos.
+
+### Metodología
+
+La metodología aplicada en el estudio es la siguiente:
+
+-   Se realizó un experimento encuestando a 2.204 adultos estadounidenses.
+
+-   Se utilizaron tres variables:
+
+    -   **Tipo de violación de derechos humanos**: integridad física (tortura, asesinatos) contra derechos de empoderamiento (libertad de expresión o reunión).
+
+    -   **Mensajero o emisor**: relator especial de la ONU contra Human Rights Watch.
+
+    -   **Enfoque de las sanciones**: unilateral (sólo Estados Unidos) contra multilateral (en conjunto con otros países).
+
+Entonces, el objetivo del estudio fue observar cómo varían las actitudes del público según quién comunica el mensaje, sobre qué tipo de abuso y con qué marco político.
+
+## ¿Qué herramientas fueron utilizadas?

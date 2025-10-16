@@ -1,0 +1,44 @@
+[
+  {
+    "path": "posts/2025-10-16-el-poder-de-la-legitimidad/",
+    "title": "Análisis de regresión lineal: El poder de la legitimidad en las sanciones por derechos humanos",
+    "description": "El análisis de regresión lineal simple y múltiple permite examinar la relación entre una variable dependiente y una o más variables independientes para explicar y predecir comportamientos o resultados. Utilizaremos el artículo de Ryan Yu-Lin Liou para replicar la metodología y las herramientas de R para hacer este tipo de análisis.",
+    "author": [
+      {
+        "name": "Soledad Araya",
+        "url": "https://snaraya.github.io"
+      }
+    ],
+    "date": "2025-10-15",
+    "categories": [
+      "Tutoriales",
+      "ICP5006",
+      "tidyverse"
+    ],
+    "contents": "\nAnálisis de regresión lineal simple y múltiple\n¿Qué estudio analizaremos?\nEl artículo “Can International Advocacy Rally Public Support for Human Rights Sanctions? Experimental Evidence from the United States” (Ryan Yu-Lin Liou, International Studies Quarterly, 2025) analiza cómo los mensajes internacionales sobre violaciones de derechos humanos influyen en el apoyo público a las sanciones en Estados Unidos.\nObjetivo del estudio\nEl trabajo investiga si, y bajo qué condiciones, la defensa internacional de los derechos humanos puede movilizar el apoyo ciudadano hacia sanciones contra regímenes represivos.\nMetodología\nLa metodología aplicada en el estudio es la siguiente:\nSe realizó un experimento encuestando a 2.204 adultos estadounidenses.\nSe utilizaron tres variables:\nTipo de violación de derechos humanos: integridad física (tortura, asesinatos) contra derechos de empoderamiento (libertad de expresión o reunión).\nMensajero o emisor: relator especial de la ONU contra Human Rights Watch.\nEnfoque de las sanciones: unilateral (sólo Estados Unidos) contra multilateral (en conjunto con otros países).\n\nEntonces, el objetivo del estudio fue observar cómo varían las actitudes del público según quién comunica el mensaje, sobre qué tipo de abuso y con qué marco político.\n¿Qué herramientas fueron utilizadas?\n\n\n\n",
+    "preview": "posts/2025-10-16-el-poder-de-la-legitimidad/images/imagen_wt.jpeg",
+    "last_modified": "2025-10-16T00:04:09-03:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2025-10-15-crear-con-distill/",
+    "title": "Cómo hacer una página estática con distill",
+    "description": "El desarrollo de páginas web estáticas, bookdowns o paquetes en R se ha masificado, especialmente cuando se trata de compartir herramientas en este software libre. Con ese motivo, revisaremos los primeros pasos para diseñar una página con el paquete `distill`.",
+    "author": [
+      {
+        "name": "Soledad Araya",
+        "url": "https://snaraya.github.io"
+      }
+    ],
+    "date": "2022-08-16",
+    "categories": [
+      "Tutoriales",
+      "ICP5006",
+      "distill"
+    ],
+    "contents": "\ndistill\nLo primero que realizaremos esta vez es instalar el paquete que usaremos:\n\n\ninstall.packages(\"distill\")\n\n\nA diferencia de la mayoría de los paquetes, no lo cargaremos al ambiente de R, sólo usaremos algunas funciones.\nCon el paquete cargado, haremos un proyecto:\n\nIremos a “New Directory”:\n\nY haremos clic en Distill Blog. Nos pedirá poner un nombre a la carpeta, donde estará alojado y el título del blog.\n\nEl blog se creará de manera automática. Esto es lo que verán al momento de crearlo:\n¿Qué significa cada documento?\n\n\nlibrary(knitr)\nlibrary(kableExtra)\n\nreadxl::read_excel(\"input/tablas.xlsx\", sheet = \"tablas_distill\") %>% \n  knitr::kable() %>% \n  kable_styling(bootstrap_options = c(\"striped\")) %>% \n  column_spec(1, width_min = \"3cm\", bold = T) %>% \n  column_spec(2, width_min = \"6cm\") \n\n\nDocumento\n\n\nDescripción\n\n\n_site.yml\n\n\nArchivo usado para la configuración del sitio web.\n\n\nindex.Rmd\n\n\nPágina de inicio del blog.\n\n\nabout.Rmd\n\n\nPágina que contiene la información acerca del autor o institución.\n\n\n_posts/welcome/welcome.Rmd\n\n\nPost de bienvenida al blog.\n\n\nPersonalizar el blog:\nHay muchas formas de personalizar el blog. Para empezar, podemos crear un tema:\n\n\ndistill::create_theme(\"theme\")\n\n\nEsto creará un archivo CSS en la carpeta. Pueden modificar a su gusto cómo lucirá su página. Cuando esté listo, sólo deben agregar theme: theme.css a su archivo _site.ylm:\n\nname: \"snaraya\"\ntitle: \"Blank Space\"\ntheme: theme.css\nnavbar:\n\nSi buscan personalizar su página, les dejo algunos links de interés:\nCrear un tema en distill.\nR Markdown Cookbook.\nPaquete pasa usar emojis en R Markdown.\nSi buscan personalizar la paleta de colores de su página y de los gráficos, les recomiendo esta página.\nEn mi caso, cambié las fuentes y los colores que usa por defecto Distill:\nFuentes:\n\n#En un documento css, la manera de comentar líneas es con */\n\n@import url('https://fonts.googleapis.com/css2?family=Roboto');\n@import url('https://fonts.googleapis.com/css2?family=Silkscreen'); \n@import url('https://fonts.googleapis.com/css2?family=Poppins');\n\n  /*-- Specify custom fonts ~~~ must be imported above   --*/\n  --heading-font:    'Poppins';\n  --mono-font:       'Roboto';\n  --body-font:       'Poppins';\n  --navbar-font:     'Silkscreen';  /* websites + blogs only */\n}\n\nColores:\n\n.distill-site-header {\n  --title-size:       20px;\n  --text-color:       #f7ede2;\n  --text-size:        15px;\n  --hover-color:      #f28482;\n  --bkgd-color:       #f5cac3;\n}\n\n.distill-site-footer {\n  --text-color:       #f7ede2;\n  --text-size:        15px;\n  --hover-color:      #f28482;\n  --bkgd-color:       #f5cac3;\n}\n\nTambién, cambié la página About:\n\n\ninstall.packages(\"postcards\")\n\n\nUsé la función create_postcard():\n\n\npostcards::create_postcard(\"about.Rmd\")\n\n\nEsto les permitirá tener una buena página que presente su carrera profesional/académica, y que además tenga sus redes sociales y de contacto.\nPublicar nuestro blog:\nUsaremos GitHub Pages para lanzar nuestro blog. Hay distintas maneras de poner un blog hecho con R Markdown online, pero nosotros/as usaremos esta versión para ocupar la cuenta que hicimos la semana pasada.\nHay diferentes formas de llegar al mismo destino, probablemente esa es una de las fortalezas de R, pero cuando recién se está aprendiendo esto puede resultar abrumador. En mi caso, yo ya tenía creado un repositorio con el nombre de mi usuario.github.io (https://github.com/snaraya.github.io/). Crearemos, entonces, una repo que nos permita lanzar nuestra página.\nOk, tenemos la repo en nuestra cuenta.\nPodemos abrir la repo con GitHub Desktop, esto nos creará automáticamente una carpeta local que tendrá un README.md. Podemos mover los archivos de nuestro proyecto directamente a esa carpeta. El archivo README.md no es necesario que sea modificado, pero pueden cambiar el nombre y agregar una descripción si lo desean.\nIremos a Build que se encuentra en el panel superior derecho.\n\nEste paso nos dará una mirada global de la página que estamos creando. Si hay algún problema, lo más probable es que se pueda identificar en este momento. De esa manera, se puede trazar el error. Si no hay errores, es momento de lanzarla.\nSi queremos hacerlo desde la consola, podemos poner:\n\n\nrmarkdown::render_site()\n\n\nCuando corran la página, ésta se abrirá en el Viewer:\n\nDecidí dejar una pestaña para hacer un CV. Ustedes pueden crear tantas secciones como lo crean necesario para el desarrollo de sus proyectos.\n\nArchivo jekill\nGitHub Pages ocupa su propia interfaz al momento de lanzar una página web, por lo que debemos decirle a GitHub que no ocuparemos esa interfaz predeterminada, sino la que creamos con Distil. Para eso, crearemos un archivo dentro de nuestra repo:\n\n\nfile.create(\".nojekyll\")\n\n\nEsto bastará para que nuestro sitio pueda lanzarse de manera exitosa.\nLanzamiento\nVan a GitHub Desktop y hacen el primer commit desde la carpeta local. Esto subirá los archivos en los que han estado trabajando a GitHub, y dentro de unos minutos podrán ver su página lista.\n\nPueden hacer su página tan simple o tan compleja como lo quieran. Pueden agregar imágenes a la lista de de publicaciones, cambiar el header; ser creativos. Finalmente, la página representa sus intereses personales y académicos.\n\nFuentes online:\n* Distill for R Markdown.\n* coolors.\n\n\n\n",
+    "preview": "posts/2025-10-15-crear-con-distill/images/imagen_wt.jpeg",
+    "last_modified": "2025-10-16T00:02:16-03:00",
+    "input_file": {}
+  }
+]
