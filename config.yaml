@@ -9,12 +9,12 @@ permalinks:
 
 menu:
   main:
-    - name: About
-      url: "/about/"
+    - name: sobre mi
+      url: "/sobremi/"
     - name: GitHub
-      url: "https://github.com/rstudio/blogdown"
-    - name: Twitter
-      url: "https://twitter.com/rstudio"
+      url: "https://github.com/snaraya"
+    - name: LinkedIn
+      url: "x"
 
 params:
   description: "A website built through Hugo and blogdown."
