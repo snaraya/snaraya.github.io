@@ -1,10 +1,9 @@
 ---
-title: ejemplo
+title: ejemplo4
 author: R Build
 date: '2026-10-15'
-slug: ejemplo
+slug: ejemplo4
 categories: []
 tags: []
 ---
 
-Hola mundo
